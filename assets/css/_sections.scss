@@ -1,0 +1,450 @@
+@mixin align-center {
+  -webkit-box-align: center !important;
+  align-items: center !important;
+  -ms-flex-align: center !important;
+}
+@mixin anchor-main {
+  font-size: 16px;
+  text-transform: uppercase;
+  color: $theme-main-color;
+}
+@mixin d-flex {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+// Slider Contact Box
+/* SECTIONS ** */
+/* Home Section ** */
+section.home-content {
+  position: relative;
+  padding: $section-padding;
+  background: $white;
+  overflow: hidden;
+}
+
+section.home-content .container,
+section.home-content .container-fluid {
+  position: relative;
+  z-index: 3;
+}
+
+.featured-title,
+section.home-content #primary h1 {
+  font-family: $font-primary;
+  font-size: 68px;
+  font-weight: 600;
+  line-height: 1;
+  position: relative;
+  display: block;
+  margin: 0 auto 1rem;
+  padding-bottom: 0 0 1rem 0;
+  text-align: left;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: lighten($theme-main-color, 15%); // $theme-main-color lightened a bit
+  @media (max-width: $lg) {
+    font-size: 48px;
+  }
+  @media (max-width: $md) {
+    font-size: 34px;
+  }
+}
+
+.featured-title span,
+section.home-content #primary h1 span {
+  font-family: $font-primary;
+  font-size: 36px;
+  font-style: italic;
+  display: block;
+  text-transform: none;
+  color: $theme-secondary-color;
+  @media (max-width: $lg) {
+    font-size: 30px;
+  }
+}
+
+.home-content .services a {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+  &:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+
+  & h3 {
+    font-size: 32px;
+    font-weight: 600;
+    position: absolute;
+    z-index: 9;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0.5rem;
+    -webkit-transition: all 0.45s ease;
+    transition: all 0.45s ease;
+    text-align: left;
+    color: $white;
+  }
+
+  &:hover h3 {
+    color: $black;
+  }
+
+  & .box-overlay {
+    -webkit-transition: opacity 0.45s ease;
+    transition: opacity 0.45s ease;
+    opacity: 0.6;
+  }
+
+  &:hover .box-overlay {
+    opacity: 0;
+  }
+}
+
+.home-content .services a {
+  img {
+    -webkit-transition: -webkit-transform 0.45s ease;
+    transition: -webkit-transform 0.45s ease;
+    transition: transform 0.45s ease;
+    transition: transform 0.45s ease, -webkit-transform 0.45s ease;
+  }
+
+  &:hover img {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
+.home-content .services a .box-overlay {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: $theme-secondary-color;
+}
+/* ----------SERVICES ---------- */
+section.cta-gallery {
+  position: relative;
+  margin: 4rem 0 0;
+  padding: 0;
+  background: rgb(221, 223, 224);
+
+  & > a {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: $section-padding;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+  }
+
+  @media screen and (max-width: $sm) {
+    margin: 0;
+  }
+}
+
+section.cta-gallery a {
+  & .box {
+    width: 100%;
+    padding: 0.5rem 0;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    background-color: $theme-secondary-color;
+
+    p {
+      font-family: $font-primary;
+      font-size: 24px;
+      font-weight: 600;
+      -webkit-transition: all 0.8s ease;
+      transition: all 0.67s ease;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      color: $white;
+
+      @media screen and (max-width: $sm) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &:hover .box {
+    background-color: darken($theme-secondary-color, 10%);
+  }
+
+  &:hover p {
+    letter-spacing: 2px;
+  }
+
+  & .just-woman {
+    position: relative;
+    margin-top: -50%;
+    @media screen and (max-width: $sm) {
+      margin-top: 0;
+    }
+  }
+
+  & .camera {
+    position: absolute;
+    z-index: 9;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+/* Meet Doc */
+section.meet {
+  overflow: hidden;
+  padding: 4rem 0 0;
+  background: $white;
+
+  & [class='col-sm-6'] {
+    @media screen and (max-width: $xs) {
+      margin-bottom: 3rem;
+    }
+  }
+
+  & h4 {
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: $theme-main-color;
+
+    & span {
+      font-family: $font-primary;
+      font-size: 20px;
+      display: block;
+      margin-top: 1rem;
+      text-transform: none;
+      color: $theme-secondary-color;
+    }
+
+    &::after {
+      position: relative;
+      display: block;
+      width: 25%;
+      height: 1px;
+      margin: 1rem 0;
+      content: '';
+      background-color: $theme-accent-color;
+      @media screen and (max-width: $md) {
+        margin: 1rem auto;
+      }
+    }
+  }
+
+  p {
+    margin: 0.75rem 0;
+  }
+
+  .btn {
+    margin: 1rem 0 1.5rem;
+  }
+}
+
+section.meet {
+  .p-abs {
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    left: 0;
+    padding: $bs-padding;
+    @media screen and (max-width: $md) {
+      position: relative;
+      padding: 0;
+    }
+  }
+}
+@mixin block {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 100%;
+  display: block;
+  width: 100%;
+  height: 100%;
+  content: '';
+  background: lighten($theme-main-color, 55%);
+  @content;
+}
+
+section.meet {
+  & .creds {
+    position: relative;
+    padding: 1rem 0;
+    background: lighten($theme-main-color, 55%);
+
+    &::before {
+      @include block;
+    }
+
+    &::after {
+      @include block {
+        right: 100%;
+        left: initial;
+        width: 2.659%;
+      }
+    }
+  }
+}
+
+section.review {
+  position: relative;
+  padding: 4rem 0 8rem;
+  background: $theme-secondary-color;
+
+  & h2 {
+    color: $white;
+
+    span {
+      margin-top: 1rem;
+      color: $white;
+    }
+  }
+
+  & blockquote {
+    font-family: 'Open Sans', serif;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: italic;
+    line-height: 2;
+    margin: 0;
+    padding: 1rem 0;
+    text-align: left;
+    color: $white;
+    border-left: 0;
+
+    &::before {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 30px;
+      content: '';
+      opacity: 0.7;
+      background: url('img/quote.png') no-repeat 0 0;
+      background-size: 40px 30px;
+    }
+    @media screen and (max-width: $sm ) {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+  }
+
+  & .author {
+    font-weight: 400;
+    font-style: normal;
+    position: relative;
+    display: block;
+    text-align: right;
+    color: $white;
+  }
+}
+
+section.review .bx-slider,
+section.review .bx-slider li,
+section.review .bx-wrapper {
+  height: auto;
+}
+/* Contact ** */
+section.contact {
+  padding: 0;
+  background: url('img/bg-footer.jpg') no-repeat center center;
+  background-size: cover;
+
+  & .contact-info {
+    position: relative;
+    z-index: 9999;
+    margin-top: -4rem;
+    margin-bottom: -4rem;
+    background: rgba(#fff, .9);
+
+    @media screen and (max-width: $sm ) {
+      margin: 0;
+    }
+  }
+}
+
+section.contact .contact-info h3 {
+  @media screen and (max-width: $lg ) {
+    font-size: 42px;
+  }
+}
+
+section.contact .contact-info p a.hovered,
+section.contact .contact-info p a:hover {
+  color: #000;
+}
+
+section.contact .contact-info p,
+section.contact .contact-info p a {
+  font-family: $font-primary;
+  font-size: 30px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+section.contact .contact-info {
+  & a {
+    & img {
+      opacity: 0.7;
+      transition: opacity 0.33s ease;
+    }
+    &:hover img {
+      opacity: 1;
+    }
+  }
+}
+
+section.contact .contact-info address {
+  font-family: $font-secondary;
+  font-size: 18px;
+  font-weight: 400;
+  color: $dark-grey;
+  margin: 1rem 0 2rem 0;
+
+  & span {
+    font-size: 16px;
+    font-style: italic;
+  }
+  @media screen and (max-width: $lg ) {
+    font-size: 18px;
+  }
+}
+
+section.social {
+  padding: 8rem 0 4rem;
+  background: $white;
+
+  & h4 {
+    font-size: 34px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  & .social-icons li a {
+    font-size: 32px;
+    padding: 16px;
+    transition: all 0.33s ease;
+    color: $white;
+    border-radius: 50%;
+    background: $theme-main-color;
+    @media (max-width: $sm) {
+      font-size: 16px;
+      padding: 8px;
+    }
+
+    &:hover {
+      background: $theme-secondary-color;
+    }
+  }
+}
