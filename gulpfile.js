@@ -29,13 +29,13 @@
 
 // START Editing Project Variables.
 // Project related.
-var project                 = 'vantageps'; // Project Name.
-var projectURL              = 'localhost:8888/sandbox/'; // Project URL. Could be something like localhost:8888.
+var project                 = 'desertdental'; // Project Name.
+var projectURL              = 'localhost:8888/ctm/'; // Project URL. Could be something like localhost:8888.
 var productURL              = './'; // Theme/Plugin URL. Leave it like it is, since our gulpfile.js lives in the root folder.
 
 // Translation related.
-var text_domain             = 'vantageps'; // Your textdomain here.
-var destFile                = 'vantageps.pot'; // Name of the transalation file.
+var text_domain             = 'desertdental'; // Your textdomain here.
+var destFile                = 'desertdental.pot'; // Name of the transalation file.
 var packageName             = 'v'; // Package name.
 var bugReport               = 'https://creativetakemedical.com'; // Where can users report bugs.
 var lastTranslator          = 'S. Quinn <shawn@creativetakeweb.com>'; // Last translator Email ID.
@@ -130,7 +130,7 @@ var del          = require('del'); // Deletes files and folders.
  *    3. You may define a custom port
  *    4. You may want to stop the browser from openning automatically
  */
-gulp.task( 'browser-sync', function() {
+gulp.task( 'bs', function() {
   browserSync.init( {
 
     // For more options
@@ -141,7 +141,7 @@ gulp.task( 'browser-sync', function() {
 
     // `true` Automatically open the browser with BrowserSync live server.
     // `false` Stop the browser from automatically opening.
-    open: false,
+    open: true,
 
     // Inject CSS changes.
     // Comment it to reload browser for every CSS change.
@@ -316,13 +316,13 @@ gulp.task( 'browser-sync', function() {
 // gulp dist
 // Copies the files to the /dist folder for distributon as simple theme
 gulp.task('dist', ['clean-dist'], function() {
-    gulp.src(['**/*','!bower_components','!bower_components/**','!node_modules','!node_modules/**','!src','!src/**','!dist','!dist/**','!dist-product','!dist-product/**','!sass','!sass/**','!readme.txt','!readme.md','!package-lock.json','!package.json','!gulpfile.js','!CHANGELOG.md','!.travis.yml','!jshintignore', '!codesniffer.ruleset.xml', '*', '!vantageps' ])
-    .pipe(gulp.dest('vantageps/'))
+    gulp.src(['**/*','!bower_components','!bower_components/**','!node_modules','!node_modules/**','!src','!src/**','!dist','!dist/**','!dist-product','!dist-product/**','!sass','!sass/**','!readme.txt','!readme.md','!package-lock.json','!package.json','!gulpfile.js','!CHANGELOG.md','!.travis.yml','!jshintignore', '!codesniffer.ruleset.xml', '*', '!desertdental' ])
+    .pipe(gulp.dest('desertdental/'))
 });
 
 // Deleting any file inside the /src folder
 gulp.task('clean-dist', function () {
-  return del(['vantageps/**/*',]);
+  return del(['desertdental/**/*',]);
 });
 
 // Deleting any file inside the /src folder
@@ -336,7 +336,7 @@ gulp.task('clean-img', function () {
   *
   * Watches for file changes and runs specific tasks.
   */
- gulp.task( 'default', ['styles', 'vendorsJs', 'customJS', 'images', 'browser-sync'], function () {
+ gulp.task( 'default', ['styles', 'vendorsJs', 'customJS', 'images', 'bs'], function () {
   gulp.watch( projectPHPWatchFiles, reload ); // Reload on PHP file changes.
   gulp.watch( styleWatchFiles, [ 'styles' ] ); // Reload on SCSS file changes.
   gulp.watch( vendorJSWatchFiles, [ 'vendorsJs', reload ] ); // Reload on vendorsJs file changes.

@@ -16,12 +16,20 @@ wow.init();
 //Begin jQuery
 jQuery(function($) {
 
+  const $header = $("#header").height();
+  const $naved = $("#nav-sticky");
+  $(window).scroll(function() {
+    const scroll = $(window).scrollTop();
+    if ( scroll >= $header+200 ) {
+        $naved.addClass("revealer");
+    } else {
+        $naved.removeClass("revealer");
+    }
+  });
 		/****************************************************************/
 		/*** //Init Headroom ***/
 		/****************************************************************/
-
 		var $head = $("#header > div").height();
-
 		$(".sticky-container").headroom({
 			// vertical offset in px before element is first unpinned
 			offset : $head,
@@ -39,16 +47,16 @@ jQuery(function($) {
 		/****************************************************************/
 		/*** Add/Remove Class on Scroll ***/
 		/****************************************************************/
-		$(window).scroll(function() {
-		    const scroll = $(window).scrollTop();
-			const x = $(".sticky");
+   $(window).scroll(function() {
+      const scroll = $(window).scrollTop();
+      const x = $(".sticky");
 
-		    if ( scroll >= 175 ) {
-		        $(x).addClass("scrolled");
-		    } else {
-		        $(x).removeClass("scrolled");
-		    }
-		});
+       if ( scroll >= 175 ) {
+           $(x).addClass("scrolled");
+       } else {
+           $(x).removeClass("scrolled");
+       }
+   });
 
 
 		/****************************************************************/
@@ -222,7 +230,7 @@ jQuery(function($) {
 		/****************************************************************/
 		/*** //BX Slider Main ***/
 		/****************************************************************/
-		$('.bx-slider_off').bxSlider({
+		$('.bx-slider').bxSlider({
 			autoControls: false,
 			pager: false,
 			adaptiveHeight: true,

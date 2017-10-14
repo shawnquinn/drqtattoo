@@ -93,6 +93,7 @@ a.button:after{content:''}
 .float-box .links a:hover,.float-box a:hover{text-decoration:underline}
 .float-box .col{border-left:1px solid #fff}
 #header{position:relative;z-index:9999;background:transparent}
+#header-info{z-index:99999;position:relative}
 #social::after{position:relative;z-index:999;bottom:0;display:block;width:90%;height:1px;margin-left:15px;content:'';background:#80c7cb}
 #site-logo{float:left;margin:0;padding:0 5px}
 #site-meta{float:right;margin:8px 15px 0 0;text-align:right;line-height:16px}
@@ -104,6 +105,8 @@ a.button:after{content:''}
 .site-name{display:block;padding-top:20px;font-size:2.063em;line-height:1em}
 .site-name a{color:#0c739e;font-size:28px;font-weight:700}
 .site-description{display:block;color:#0e3087;font-size:22px;font-weight:400;font-style:italic}
+#nav-sticky{display:none}
+#nav-sticky.revealer{display:block}
 #access{position:relative;z-index:9999;display:block;width:100%;background:#5b6063}
 #access,.sf-menu,.sf-menu a{height:50px}
 .sticky-wrapper{position:fixed;top:0;width:100%;background:transparent}
@@ -123,7 +126,7 @@ a.button:after{content:''}
 .sf-menu ul{position:absolute;z-index:99;top:50px;left:0;display:none}
 .stuck .sf-menu ul{position:absolute;z-index:99;top:50px;left:0;display:none}
 .stuck .sf-menu ul ul{position:absolute;z-index:99;top:0 !important;top:55px;left:0;display:none}
-.sf-menu>li{display:inline-block;float:none;margin-left:0;padding-bottom:3rem}
+.sf-menu>li{float:none;margin-left:0;padding-bottom:3rem}
 .sf-menu>li:hover{cursor:pointer}
 .sf-menu li.sfHover>ul,.sf-menu li:hover>ul{display:block}
 .sf-menu ul ul{top:0;left:100% !important;background:#7d8589;box-shadow:none}
@@ -131,7 +134,7 @@ a.button:after{content:''}
 .sf-menu ul ul ul li a:hover{color:#111 !important;background:#fff !important}
 .sf-arrows.sf-navbar ul .sf-with-ul:after{margin-top:-3px;margin-right:0;border-color:transparent;border-top-color:#dfeeff;border-top-color:rgba(255,255,255,0.5)}
 .sf-arrows.sf-navbar ul>.sfHover>.sf-with-ul:after,.sf-arrows.sf-navbar ul>li>.sf-with-ul:focus:after,.sf-arrows.sf-navbar ul>li:hover>.sf-with-ul:after{border-color:transparent;border-top-color:white}
-.sf-menu{width:100%;margin:0 auto 0 0;text-align:center}
+.sf-menu{width:100%;margin:0 auto 0 0;text-align:center;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:space-evenly;-webkit-justify-content:space-evenly;-ms-flex-pack:space-evenly;justify-content:space-evenly}
 .sf-menu ul{min-width:12em;background:white;box-shadow:3px 6px 6px rgba(0,0,0,0.3)}
 .sf-menu ul ul li a{color:#fff !important}
 .sf-menu ul ul li a:hover{color:#fff !important;background:#333 !important}

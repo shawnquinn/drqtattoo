@@ -712,6 +712,10 @@ a.btn-secondary:hover {
   position: relative;
   z-index: 9999;
   background: transparent;
+  &-info {
+    z-index: 99999;
+    position: relative;
+  }
 }
 
 #social::after {
@@ -792,6 +796,14 @@ a.btn-secondary:hover {
 /****************************************************************/
 /*** Top Navigation ***/
 /****************************************************************/
+#nav-sticky {
+  display: none;
+}
+
+#nav-sticky.revealer {
+  display: block;
+}
+
 #access {
   position: relative;
   z-index: 9999;
@@ -937,7 +949,6 @@ a.btn-secondary:hover {
 
 .sf-menu > li {
   /* For Hover */
-  display: inline-block;
   float: none;
   margin-left: 0;
   padding-bottom: 3rem;
@@ -990,6 +1001,8 @@ a.btn-secondary:hover {
   width: 100%;
   margin: 0 auto 0 0;
   text-align: center;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .sf-menu ul {

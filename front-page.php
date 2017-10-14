@@ -33,25 +33,8 @@ $empty = ( empty( $lumos_options['home_headline'] ) && empty( $lumos_options['ho
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-5">
-          <div id="logo" >
-				      <h1>
-				        <a href="<?php echo home_url('/'); ?>">
-				          <img class="img-fluid d-block mx-auto" src="<?php header_image(); ?>" width="<?php if (function_exists('get_custom_header')) {
-                      echo get_custom_header() -> width;
-                  } else {
-                      echo HEADER_IMAGE_WIDTH;
-                  } ?>" height="<?php if (function_exists('get_custom_header')) {
-                      echo get_custom_header() -> height;
-                  } else {
-                      echo HEADER_IMAGE_HEIGHT;
-                  } ?>" alt="<?php bloginfo('name'); ?>" />
-				        </a>
-				      </h1>
-				    </div><!-- end of #logo -->
-
             <div class="row">
-              <div class="col-lg-6"><a href="tel:+1-347-292-9877" class="btn btn-block btn-primary">(347) 292-9877</a></div>
-              <div class="col-lg-6"><a href="<?php echo home_url('/contact-us/'); ?>" class="btn btn-block btn-primary">Book Online</a></div>
+              <div class="col-12"></div>
             </div>
         </div>
         <!-- col -->
@@ -63,6 +46,8 @@ $empty = ( empty( $lumos_options['home_headline'] ) && empty( $lumos_options['ho
   <!-- boxed -->
 
   <ul class="bx-slider">
+    <li id="one"></li>
+    <li id="one"></li>
     <li id="one"></li>
   </ul>
   <!-- bx-slider -->

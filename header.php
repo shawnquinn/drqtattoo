@@ -35,10 +35,82 @@ $lumos_options = lumos_get_options();
       <?php body_class(); ?> >
 
 <header id="header">
-  <div class="sticky-container sticky">
+
+  <div id="header-info" class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div id="logo" >
+            <h1>
+              <a href="<?php echo home_url('/'); ?>">
+                <img class="img-fluid d-block mx-auto" src="<?php header_image(); ?>" width="<?php if (function_exists('get_custom_header')) {
+                    echo get_custom_header() -> width;
+                } else {
+                    echo HEADER_IMAGE_WIDTH;
+                } ?>" height="<?php if (function_exists('get_custom_header')) {
+                    echo get_custom_header() -> height;
+                } else {
+                    echo HEADER_IMAGE_HEIGHT;
+                } ?>" alt="<?php bloginfo('name'); ?>" />
+              </a>
+            </h1>
+          </div><!-- end of #logo -->
+      </div>
+
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-4">
+            <p>Schedule a Consultation: </p>
+          </div>
+
+          <div class="col-md-4">
+            <p>
+              Palm Springs 760.327.1509<br />
+              Palm Desert 760.346.7431
+            </p>
+          </div>
+
+          <div class="col-md-4">
+            <?php
+  					echo '<ul class="social-icons text-center mt-4 mt-md-0">';
+  					if (!empty($lumos_options['facebook_uid'])) 		echo '<li><a target="_blank" class="icon-facebook" href="' . $lumos_options['facebook_uid'] . '">'.'</a></li>';
+  					if (!empty($lumos_options['twitter_uid'])) 			echo '<li><a target="_blank" class="icon-twitter" href="' . $lumos_options['twitter_uid'] . '">'.'</a></li>';
+  					if (!empty($lumos_options['google_plus_uid'])) 	echo '<li><a target="_blank" class="icon-google-plus" href="' . $lumos_options['google_plus_uid'] . '">'.'</a></li>';
+  					if (!empty($lumos_options['youtube_uid'])) 			echo '<li><a target="_blank" class="icon-youtube" href="' . $lumos_options['youtube_uid'] . '">'.'</a></li>';
+  					if (!empty($lumos_options['linkedin_uid'])) 		echo '<li><a target="_blank" class="icon-linkedin" href="' . $lumos_options['linkedin_uid'] . '">'.'</a></li>';
+  					if (!empty($lumos_options['yelp_uid'])) 				echo '<li><a target="_blank" class="icon-yelp" href="' . $lumos_options['yelp_uid'] . '">'.'</a></li>';
+  					if (!empty($lumos_options['blogger_uid'])) 			echo '<li><a target="_blank" class="icon-blogger" href="' . $lumos_options['blogger_uid'] . '">'.'</a></li>';
+  					if (!empty($lumos_options['instagram_uid'])) 		echo '<li><a target="_blank" class="icon-instagram" href="' . $lumos_options['instagram_uid'] . '">'.'</a></li>';
+  					if (!empty($lumos_options['foursquare_uid'])) 	echo '<li><a target="_blank" class="icon-foursquare" href="' . $lumos_options['foursquare_uid'] . '">'.'</a></li>';
+  					echo '</ul><!-- end of .social-icons -->';
+  					?>
+          </div>
+        </div>
+        <nav id="access">
+            <ul class="mobile-nav d-md-none">
+              <li>
+                <a href="<?php echo home_url('/contact/'); ?>">
+                  <i class="fa fa-envelope" aria-hidden="true">
+                  </i>
+                </a>
+              </li>
+              <li>
+                <a href="tel:+1-347-292-9877">
+                  <i class="fa fa-phone" aria-hidden="true">
+                  </i>
+                </a>
+              </li>
+            </ul>
+            <?php wp_nav_menu(array( 'theme_location' => 'header-nav','menu_class' => 'sf-menu menu-slick')); ?>
+          </nav><!-- nav#access -->
+      </div>
+    </div>
+  </div>
+
+  <div id="nav-sticky" class="sticky-container sticky">
 		<div class="container-fluid">
 			<div class="row align-items-center">
 				<div class="col-lg-12">
+
           <?php if(!is_frontpage) : ?>
 					<div id="logo" >
 				      <h1>
@@ -55,7 +127,6 @@ $lumos_options = lumos_get_options();
 				        </a>
 				      </h1>
 				    </div><!-- end of #logo -->
-				</div>
 
         <?php endif; ?>
 
