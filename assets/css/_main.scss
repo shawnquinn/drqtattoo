@@ -246,13 +246,13 @@ a img {
 body {
   text-align: left;
   text-transform: none;
-  color: #65696e;
+  color: lighten($theme-main-color, 10%);
   background-color: #fff;
   background-attachment: scroll;
   font-family: $font-secondary;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.75;
   -moz-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -269,14 +269,15 @@ body {
   padding-bottom: 0;
   background-color: #fff;
 }
+
 /*** Fonts and Social Media ICOs
 ****************************************************************/
 @font-face {
   font-family: 'icomoon';
   font-weight: normal;
   font-style: normal;
-  src: url("fonts/icomoon.eot?i38w3y");
-  src: url("fonts/icomoon.eot?i38w3y#iefix") format("embedded-opentype"), url("fonts/icomoon.ttf?i38w3y") format("truetype"), url("fonts/icomoon.woff?i38w3y") format("woff"), url("fonts/icomoon.svg?i38w3y#icomoon") format("svg");
+  src: url("assets/fonts/icomoon.eot?i38w3y");
+  src: url("assets/fonts/icomoon.eot?i38w3y#iefix") format("embedded-opentype"), url("assets/fonts/icomoon.ttf?i38w3y") format("truetype"), url("assets/fonts/icomoon.woff?i38w3y") format("woff"), url("assets/fonts/icomoon.svg?i38w3y#icomoon") format("svg");
 }
 
 [class*=" icon-"],
@@ -368,7 +369,7 @@ h4,
 h5,
 h6 {
   text-transform: uppercase;
-  color: #5F6369;
+  color: $theme-main-color;
 }
 
 #content h1,
@@ -459,7 +460,8 @@ a.button:after {
 .float-box .wpcf7 input[type="submit"],
 .widget .wpcf7 input[type="submit"],
 a.btn-primary,
-a.btn-secondary {
+a.btn-secondary,
+.btn-secondary {
   margin: 1rem 0 2rem;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -474,6 +476,7 @@ a.btn-secondary {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   font-weight: 400;
+  border-radius: 0;
 }
 
 #primary .wpcf7 input[type="submit"]:hover,
@@ -487,6 +490,7 @@ a.btn-primary:hover {
   border: 1px solid $theme-main-color;
   outline: 0;
   background: $theme-main-color !important;
+  box-shadow: 0px 4px 8px rgba(#333, 0.5);
 }
 
 .btn-primary.focus,
@@ -504,19 +508,21 @@ a.btn-primary:hover {
 .btn-secondary,
 a.btn-secondary {
   text-transform: uppercase;
-  color: #0C739E;
-  border: 2px solid #0C739E;
-  background: transparent;
+  color: $theme-secondary-color;
+  border: 1px solid $white;
+  background: $white;
   font-family: 'Open Sans', sans-serif;
+  border-radius: 0;
 }
 
 #respond input#submit:hover,
 .btn-secondary:hover,
 a.btn-secondary:focus,
 a.btn-secondary:hover {
-  color: #0C739E;
-  border: 2px solid #e0e0e0;
-  background: #fff;
+  color: $white;
+  border: 1px solid $theme-secondary-color;
+  background: $theme-secondary-color;
+  box-shadow: 0px 4px 8px rgba(#333, 0.5);
 }
 
 .slider .btn,
@@ -716,6 +722,9 @@ a.btn-secondary:hover {
     z-index: 99999;
     position: relative;
   }
+  #info-contact {
+    border-bottom: 1px solid $theme-secondary-color;
+  }
 }
 
 #social::after {
@@ -810,7 +819,7 @@ a.btn-secondary:hover {
   /* For browsers that do not support gradients */
   display: block;
   width: 100%;
-  background: $theme-main-color;
+  background: rgba($white, 0.9);
 }
 
 #access,
@@ -853,26 +862,25 @@ a.btn-secondary:hover {
   padding: 0 1.25rem;
   text-decoration: none;
   text-transform: uppercase;
-  color: #ffffff;
-  background: none;
+  color: #58595b;
   font-family: $font-secondary;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 50px;
-
+  transition: color 0.2s linear;
   &:hover {
     text-decoration: none;
-    color: #fff;
+    color: #007dc4;
     border-bottom: 0;
-    background-color: desaturate(lighten($theme-main-color, 20%), 25%);
   }
 }
 
 .hover {
   text-decoration: none;
-  color: #fff;
+  color: #fff !important;
   border-bottom: 0;
   background-color: desaturate(lighten($theme-main-color, 20%), 25%) !important;
+  transition: all 0.2s ease;
 }
 
 #access #searchform {
@@ -1885,12 +1893,8 @@ header .social-icons li a {
   display: inline-block;
   margin: 0;
   padding: 10px;
-  color: #7d8589;
-  border: 1px solid #7d8589;
-  border-top: 0;
-  border-right: 0;
-  border-bottom: 0;
-  border-left: 1px solid #fff;
+  color: $theme-secondary-color;
+  border: 2px solid $theme-secondary-color;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
@@ -1898,6 +1902,7 @@ header .social-icons li a {
   font-family: 'icomoon';
   font-size: 20px;
   line-height: 1em;
+  transition: all 0.2s ease;
 }
 @media only screen and (max-width: 1280px) {
   header .social-icons li a {
@@ -1907,7 +1912,7 @@ header .social-icons li a {
 
 header .social-icons li a:hover {
   color: #fff;
-  border: 1px solid $theme-accent-color;
+  border: 2px solid $theme-accent-color;
   background: $theme-accent-color;
 }
 
@@ -2613,14 +2618,10 @@ div.wpcf7-validation-errors {
 .bx-slider li,
 .bx-wrapper,
 .home .slider {
-  height: 760px;
-}
-@media only screen and (min-width: 2050px) {
-  .bx-slider,
-  .bx-slider li,
-  .bx-wrapper,
-  .home .slider {
-    height: 800px;
+  height: 825px;
+
+  @media only screen and (max-width: $lg) {
+    height: 600px;
   }
 }
 
@@ -2660,11 +2661,6 @@ div.wpcf7-validation-errors {
   }
 }
 
-.home .slider li {
-  background-position: center top;
-  background-size: cover;
-}
-
 .home .slider .boxed {
   position: absolute;
   z-index: 999;
@@ -2680,25 +2676,6 @@ div.wpcf7-validation-errors {
 .home .slider .boxed .container-fluid .row {
   position: relative;
   height: 100%;
-}
-
-.slider .boxed .procedure-menu {
-  position: absolute;
-  display: none;
-  font-family: $font-primary;
-}
-
-.slider .boxed .columned {
-  height: 100%;
-}
-
-.slider .boxed .procedure-menu {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  padding-top: 8rem;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.8);
 }
 
 .slider .boxed h3,
@@ -2737,20 +2714,43 @@ div.wpcf7-validation-errors {
   background: $theme-accent-color;
 }
 
-.procedure-menu .featured-menu li {
-  margin: 1.5rem 0;
+.slider .boxed {
+  nav {
+      ul {
+        display: flex;
+        justify-content: space-evenly;
+        li {
+          display: flex;
+          &:last-child::after {
+            border: 0;
+            display: none;
+          }
+          &::after {
+            content:'';
+            display: inline-block;
+            border-right: 2px solid #fff;
+            margin-left: 70%;
+          }
+          a {
+            font-family: $font-primary;
+            color: #fff;
+            text-shadow: 0px 2px 3px rgba(#000, 0.5);
+            text-transform: uppercase;
+            font-size: 24px;
+            font-weight:600;
+            display: block;
+            transform: scale(1);
+            transition: all 0.2s ease;
+            &:hover {
+              transform: scale(1.3);
+              text-shadow: 0px 8px 12px rgba(#000, 0.5);
+            }
+          }
+        }
+      }
+  }
 }
 
-.procedure-menu .featured-menu a {
-  text-transform: uppercase;
-  color: #7d8589;
-  font-family: $font-primary;
-  font-size: 18px;
-}
-
-.procedure-menu .featured-menu a:hover {
-  color: $theme-accent-color;
-}
 /*** Inside Page Styling ***/
 .bg-container {
   position: relative;

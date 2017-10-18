@@ -1,5 +1,5 @@
 <?php
-	
+
 /**
  * Some Shortcodes.
 ---------------------------------------------------------*/
@@ -21,7 +21,7 @@
 	function clear_shortcode( $atts, $content = null ) {
 		return '<div class="clear"></div>';
 	}
-	
+
 	//Column Row
 	function row_shortcode( $atts, $content = null ) {
 		extract(shortcode_atts(array('class' => ''), $atts));
@@ -166,7 +166,7 @@
 	function cta_two_shortcode( $atts, $content = null ) {
 		return '<a class="cta-2" href="/photo-gallery/">View Our Photo Gallery</a>';
 	}
-	
+
 	//Columns
 	function column_nested_shortcode($atts, $content = null) {
 		extract(shortcode_atts(array('col' => '', 'class' => null ), $atts));
@@ -182,7 +182,7 @@
 
 			case '1-2':
 				return '<div class="col-md-6 '.$class.'">' . do_shortcode($content) . '</div>';
-				break;						 
+				break;
 
 			case '3-4':
 				return '<div class="col-md-9 '.$class.'">' . do_shortcode($content) . '</div>';
@@ -236,5 +236,5 @@ if( !function_exists('wpex_fix_shortcodes') ) {
 	}
 	add_filter('the_content', 'wpex_fix_shortcodes');
 }
-	
+
 ?>

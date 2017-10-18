@@ -15,12 +15,35 @@
 }
 // Slider Contact Box
 /* SECTIONS ** */
+/* Call to Actions ** */
+section.call-to-actions {
+  background: $theme-quaternary-color;
+
+  .container {
+    color: $white;
+    background: $theme-tertiary-color;
+
+    a,
+    p {
+      margin: 0;
+      text-transform: uppercase;
+    }
+
+    a {
+      color: #caecff;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
 /* Home Section ** */
 section.home-content {
   position: relative;
+  overflow: hidden;
   padding: $section-padding;
   background: $white;
-  overflow: hidden;
 }
 
 section.home-content .container,
@@ -32,9 +55,9 @@ section.home-content .container-fluid {
 .featured-title,
 section.home-content #primary h1 {
   font-family: $font-primary;
-  font-size: 68px;
-  font-weight: 600;
-  line-height: 1;
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 1.5;
   position: relative;
   display: block;
   margin: 0 auto 1rem;
@@ -47,20 +70,32 @@ section.home-content #primary h1 {
     font-size: 48px;
   }
   @media (max-width: $md) {
-    font-size: 34px;
+    font-size: 32px;
+  }
+}
+
+section.home-content #primary h1 {
+  font-size: 60px;
+  @media (max-width: $lg) {
+    font-size: 48px;
+  }
+  @media (max-width: $md) {
+    font-size: 32px;
   }
 }
 
 .featured-title span,
-section.home-content #primary h1 span {
+section.home-content #primary h1 span.sub {
   font-family: $font-primary;
-  font-size: 36px;
-  font-style: italic;
+  font-size: 24px;
   display: block;
-  text-transform: none;
+  padding-top: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   color: $theme-secondary-color;
+  border-top: 1px solid $theme-secondary-color;
   @media (max-width: $lg) {
-    font-size: 30px;
+    font-size: 24px;
   }
 }
 
@@ -73,7 +108,7 @@ section.home-content #primary h1 span {
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 
   &:hover {
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    box-shadow: 0 14px 28px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.22);
   }
 
   & h3 {
@@ -130,82 +165,11 @@ section.home-content #primary h1 span {
   height: 100%;
   background: $theme-secondary-color;
 }
-/* ----------SERVICES ---------- */
-section.cta-gallery {
-  position: relative;
-  margin: 4rem 0 0;
-  padding: 0;
-  background: rgb(221, 223, 224);
-
-  & > a {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding: $section-padding;
-    -webkit-transition: all 0.4s ease;
-    transition: all 0.4s ease;
-  }
-
-  @media screen and (max-width: $sm) {
-    margin: 0;
-  }
-}
-
-section.cta-gallery a {
-  & .box {
-    width: 100%;
-    padding: 0.5rem 0;
-    -webkit-transition: all 0.4s ease;
-    transition: all 0.4s ease;
-    background-color: $theme-secondary-color;
-
-    p {
-      font-family: $font-primary;
-      font-size: 24px;
-      font-weight: 600;
-      -webkit-transition: all 0.8s ease;
-      transition: all 0.67s ease;
-      letter-spacing: 0;
-      text-transform: uppercase;
-      color: $white;
-
-      @media screen and (max-width: $sm) {
-        font-size: 16px;
-      }
-    }
-  }
-
-  &:hover .box {
-    background-color: darken($theme-secondary-color, 10%);
-  }
-
-  &:hover p {
-    letter-spacing: 2px;
-  }
-
-  & .just-woman {
-    position: relative;
-    margin-top: -50%;
-    @media screen and (max-width: $sm) {
-      margin-top: 0;
-    }
-  }
-
-  & .camera {
-    position: absolute;
-    z-index: 9;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }
-}
 /* Meet Doc */
 section.meet {
   overflow: hidden;
-  padding: 4rem 0 0;
-  background: $white;
+  padding: 4rem 0;
+  background: $theme-tertiary-color;
 
   & [class='col-sm-6'] {
     @media screen and (max-width: $xs) {
@@ -213,33 +177,13 @@ section.meet {
     }
   }
 
-  & h4 {
-    font-size: 24px;
-    font-weight: 300;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: $theme-main-color;
+  & h2,
+  p {
+    color: $white;
 
     & span {
-      font-family: $font-primary;
-      font-size: 20px;
-      display: block;
-      margin-top: 1rem;
-      text-transform: none;
-      color: $theme-secondary-color;
-    }
-
-    &::after {
-      position: relative;
-      display: block;
-      width: 25%;
-      height: 1px;
-      margin: 1rem 0;
-      content: '';
-      background-color: $theme-accent-color;
-      @media screen and (max-width: $md) {
-        margin: 1rem auto;
-      }
+      color: $white;
+      border-top: 1px solid $white;
     }
   }
 
@@ -298,17 +242,47 @@ section.meet {
   }
 }
 
+section.cta-boxes {
+  padding: 4rem 0;
+  .box {
+    position: relative;
+    transition: all 0.25s ease-in-out;
+    &:hover {
+      transform: scale(1.01);
+      box-shadow: 0px 6px 15px rgba(#000, 0.3);
+    }
+    & h4 {
+      font-size: 20px;
+      letter-spacing: 2px;
+      position: absolute;
+      z-index: 3;
+      bottom: 0;
+      width: 100%;
+      margin: 0;
+      padding: 1rem 0;
+      text-align: center;
+      color: $theme-main-color;
+      background: rgba($white, .9);
+      transition: all 0.25s ease-in-out;
+    }
+    &:hover h4 {
+      background: $theme-secondary-color;
+      color: $white;
+    }
+  }
+}
+
 section.review {
   position: relative;
-  padding: 4rem 0 8rem;
-  background: $theme-secondary-color;
+  padding: 0 0 8rem 0;
+  background: $white;
 
   & h2 {
-    color: $white;
+    color: $theme-main-color;
 
     span {
       margin-top: 1rem;
-      color: $white;
+      color: $theme-main-color;
     }
   }
 
@@ -318,35 +292,33 @@ section.review {
     font-weight: normal;
     font-style: italic;
     line-height: 2;
-    margin: 0;
+    margin: 0 auto;
+    width: 80%;
     padding: 1rem 0;
-    text-align: left;
-    color: $white;
+    text-align: center;
+    color: $theme-main-color;
     border-left: 0;
-
-    &::before {
-      position: relative;
-      display: inline-block;
-      width: 40px;
-      height: 30px;
-      content: '';
-      opacity: 0.7;
-      background: url('img/quote.png') no-repeat 0 0;
-      background-size: 40px 30px;
-    }
     @media screen and (max-width: $sm ) {
       font-size: 14px;
       line-height: 1.5;
     }
   }
 
-  & .author {
-    font-weight: 400;
+  .author {
+    font-weight: 600;
     font-style: normal;
     position: relative;
     display: block;
-    text-align: right;
-    color: $white;
+    text-align: center;
+    margin-top: 1rem;
+    &::before {
+      content:'';
+      display: block;
+      margin: 0 auto 0.5rem auto;
+      width: 50px;
+      height: 1px;
+      background: $theme-main-color;
+    }
   }
 }
 
@@ -358,16 +330,13 @@ section.review .bx-wrapper {
 /* Contact ** */
 section.contact {
   padding: 0;
-  background: url('img/bg-footer.jpg') no-repeat center center;
-  background-size: cover;
 
   & .contact-info {
     position: relative;
     z-index: 9999;
     margin-top: -4rem;
     margin-bottom: -4rem;
-    background: rgba(#fff, .9);
-
+    background: $theme-secondary-color;
     @media screen and (max-width: $sm ) {
       margin: 0;
     }
@@ -396,9 +365,10 @@ section.contact .contact-info p a {
 section.contact .contact-info {
   & a {
     & img {
-      opacity: 0.7;
       transition: opacity 0.33s ease;
+      opacity: 0.7;
     }
+
     &:hover img {
       opacity: 1;
     }
@@ -409,8 +379,8 @@ section.contact .contact-info address {
   font-family: $font-secondary;
   font-size: 18px;
   font-weight: 400;
+  margin: 1rem 0 2rem;
   color: $dark-grey;
-  margin: 1rem 0 2rem 0;
 
   & span {
     font-size: 16px;

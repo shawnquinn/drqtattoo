@@ -37,8 +37,8 @@ $lumos_options = lumos_get_options();
 <header id="header">
 
   <div id="header-info" class="container">
-    <div class="row">
-      <div class="col-md-3">
+    <div class="row align-items-center">
+      <div class="col-md-4">
         <div id="logo" >
             <h1>
               <a href="<?php echo home_url('/'); ?>">
@@ -56,20 +56,20 @@ $lumos_options = lumos_get_options();
           </div><!-- end of #logo -->
       </div>
 
-      <div class="col-md-9">
-        <div class="row">
-          <div class="col-md-4">
+      <div class="col-md-8">
+        <div id="info-contact" class="row align-items-center">
+          <div class="col-md-4 text-center text-md-right">
             <p>Schedule a Consultation: </p>
           </div>
 
-          <div class="col-md-4">
+          <div class="col-md-4 text-center">
             <p>
               Palm Springs 760.327.1509<br />
               Palm Desert 760.346.7431
             </p>
           </div>
 
-          <div class="col-md-4">
+          <div class="col-md-4 text-center">
             <?php
   					echo '<ul class="social-icons text-center mt-4 mt-md-0">';
   					if (!empty($lumos_options['facebook_uid'])) 		echo '<li><a target="_blank" class="icon-facebook" href="' . $lumos_options['facebook_uid'] . '">'.'</a></li>';

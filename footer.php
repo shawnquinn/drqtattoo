@@ -11,9 +11,16 @@ $lumos_options = lumos_get_options();
 ?>
 
 <section id="px-3" class="contact">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row align-items-center">
-				<div class="col-md-8 col-lg-6 pt-5 mx-auto contact-info">
+				<div id="ps" class="col-md-4 px-0">
+					<img class="img-fluid d-block mx-auto w-100" src="<?php echo get_template_directory_uri(); ?>/img/palm-springs.jpg" alt="<?php echo esc_html_e('', 'understrap') ?>">
+					<a href="<?php echo esc_url( home_url('') ) ?>">
+						<img class="img-fluid d-block mx-auto w-100" src="<?php echo get_template_directory_uri(); ?>/img/" alt="<?php echo esc_html_e('', 'understrap') ?>">
+					</a>
+				</div>
+
+				<div class="col-md-4 contact-info">
 							<div class="row">
 								<div class="col-12">
 									<h3 class="featured-title text-center">Contact Us <span>Schedule Your Next Appointement</span></h3>
@@ -37,6 +44,13 @@ $lumos_options = lumos_get_options();
 							</div>
 						</div>
 				</div><!-- col -->
+
+				<div id="pd" class="col-md-4 px-0">
+					<img class="img-fluid d-block mx-auto w-100" src="<?php echo get_template_directory_uri(); ?>/img/palm-desert.jpg" alt="<?php echo esc_html_e('', 'understrap') ?>">
+					<a href="<?php echo esc_url( home_url('') ) ?>">
+						<img class="img-fluid d-block mx-auto w-100" src="<?php echo get_template_directory_uri(); ?>/img/map.png" alt="<?php echo esc_html_e('', 'understrap') ?>">
+					</a>
+				</div>
 			</div><!-- row -->
 		</div><!-- .container -->
 	</section><!-- end section.contact -->

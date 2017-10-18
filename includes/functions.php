@@ -41,7 +41,7 @@ function ctw_enqueue_scripts_and_styles() {
 	$ctw_registered_styles = array(
 		'bootstrap-css'			=> get_template_directory_uri().'/assets/css/bootstrap/css/bootstrap.min.css',
 		'animate'						=> get_template_directory_uri().'/assets/css/animate.css',
-		//'font-awesome'			=> get_template_directory_uri().'/assets/css/font-awesome.min.css',
+		'font-awesome'			=> get_template_directory_uri().'/assets/css/font-awesome.min.css',
 		'slicknav'					=> get_template_directory_uri().'/assets/css/slicknav.min.css',
 		//'style-sheet'				=> get_template_directory_uri().'/style.min.css',
 		'dev-style-sheet'	=> get_template_directory_uri().'/style.css'
@@ -90,11 +90,7 @@ function ctw_setup() {
 	register_nav_menu( 'footer-nav-2', 'Footer Nav Two');
 	register_nav_menu( 'sidebar-nav', 'Sidebar Nav');
 
-	register_nav_menu( 'face-nav', 'Face Nav');
-	register_nav_menu( 'breast-nav', 'Breast Nav');
-	register_nav_menu( 'body-nav', 'Body Nav');
-	register_nav_menu( 'skin-nav', 'Skin Nav');
-	register_nav_menu( 'men-nav', 'Men Nav');
+	register_nav_menu( 'slider-nav', 'Slider Nav');
 
 
 	// Add support for a variety of post formats

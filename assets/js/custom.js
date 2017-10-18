@@ -237,8 +237,8 @@ jQuery(function($) {
 			mode: 'fade',
 			controls: false,
 			auto: true,
-			pause: 6000,
-			speed: 2000,
+			pause: 5500,
+			speed: 1200,
 			randomStart: false,
 			touchEnabled: true
 		});

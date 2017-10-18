@@ -259,10 +259,11 @@
 }
 
 .bx-controls-direction {
-	position: relative;
+	position: absolute;
+	bottom: 60%;
 	height: 35px;
 	display: block;
-	width: 133px;
+	width: 100%;
 	margin: 0 auto;
 }
 
@@ -273,9 +274,10 @@
     color: #fff;
     outline: 0;
     z-index: 999;
-		background: lighten($theme-accent-color, 15%);
+		background: $theme-accent-color;
 		border: 0;
     height: 35px;
+
     width: 35px;
     font-size: 25px;
     line-height: 33px;
@@ -298,6 +300,6 @@
 
 .bx-wrapper .bx-prev:hover,
 .bx-wrapper .bx-next:hover {
-	background: #fff;
-	color: $theme-accent-color;
+	transform: scale(1.05);
+	box-shadow: 0px 3px 4px rgba(#000, 0.4);
 }
