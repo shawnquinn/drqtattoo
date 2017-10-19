@@ -191,10 +191,6 @@
 	background-size: 			cover;
 	max-width: 100%;
 	width: 100%;
-
-	@media screen and (max-width: $md) {
-		background: #fff url(img/slider/slider1.jpg) no-repeat 64% center
-	}
 }
 
 .bx-slider li#two {

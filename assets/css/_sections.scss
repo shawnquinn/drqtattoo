@@ -37,7 +37,17 @@ section.call-to-actions {
       }
     }
   }
+
+  .icon {
+    @media screen and (max-width: $sm) {
+      padding: 0 3rem 0 4rem;
+    }
+    @media screen and (max-width: $xs) {
+      padding: 0 2rem;
+    }
+  }
 }
+
 /* Home Section ** */
 section.home-content {
   position: relative;
@@ -244,38 +254,54 @@ section.meet {
 
 section.cta-boxes {
   padding: 4rem 0;
+
   .box {
     position: relative;
-    transition: all 0.25s ease-in-out;
-    &:hover {
-      transform: scale(1.01);
-      box-shadow: 0px 6px 15px rgba(#000, 0.3);
+    transition: all 0.2s ease-in-out;
+
+    img {
+      width: 100%;
     }
+
+    &:hover {
+      transform: scale(1.03);
+      box-shadow: 0 7px 14px rgba(#000, .4);
+    }
+
     & h4 {
       font-size: 20px;
-      letter-spacing: 2px;
       position: absolute;
       z-index: 3;
       bottom: 0;
       width: 100%;
       margin: 0;
       padding: 1rem 0;
+      transition: all 0.25s ease-in-out;
       text-align: center;
+      letter-spacing: 2px;
       color: $theme-main-color;
       background: rgba($white, .9);
-      transition: all 0.25s ease-in-out;
+      @media screen and (max-width: $md) {
+        font-size: 16px;
+        letter-spacing: 0;
+      }
     }
+
     &:hover h4 {
-      background: $theme-secondary-color;
       color: $white;
+      background: $theme-secondary-color;
     }
   }
 }
 
 section.review {
   position: relative;
-  padding: 0 0 8rem 0;
+  padding: 0 0 8rem;
   background: $white;
+
+  @media screen and (max-width: $md) {
+    padding: 0 0 4rem;
+  }
 
   & h2 {
     color: $theme-main-color;
@@ -292,8 +318,8 @@ section.review {
     font-weight: normal;
     font-style: italic;
     line-height: 2;
-    margin: 0 auto;
     width: 80%;
+    margin: 0 auto;
     padding: 1rem 0;
     text-align: center;
     color: $theme-main-color;
@@ -309,14 +335,15 @@ section.review {
     font-style: normal;
     position: relative;
     display: block;
-    text-align: center;
     margin-top: 1rem;
+    text-align: center;
+
     &::before {
-      content:'';
       display: block;
-      margin: 0 auto 0.5rem auto;
       width: 50px;
       height: 1px;
+      margin: 0 auto 0.5rem;
+      content: '';
       background: $theme-main-color;
     }
   }
@@ -333,9 +360,10 @@ section.contact {
 
   & .contact-info {
     position: relative;
-    z-index: 9999;
+    z-index: 3;
     margin-top: -4rem;
     margin-bottom: -4rem;
+    padding: 4rem 2rem;
     background: $theme-secondary-color;
     @media screen and (max-width: $sm ) {
       margin: 0;
@@ -343,15 +371,70 @@ section.contact {
   }
 }
 
-section.contact .contact-info h3 {
-  @media screen and (max-width: $lg ) {
-    font-size: 42px;
+.contact-info {
+  h3,
+  h4 {
+    letter-spacing: 5px;
+    color: $white;
+  }
+
+  h3 {
+    font-size: 54px;
+    font-weight: 400;
+    @media screen and (max-width: $lg ) {
+      font-size: 36px;
+    }
+
+    @media screen and (max-width: $md ) {
+      font-size: 24px;
+    }
+  }
+
+  h4 {
+    font-size: 36px;
+    font-weight: 300;
+    @media screen and (max-width: $lg ) {
+      font-size: 24px;
+    }
+
+    @media screen and (max-width: $md ) {
+      font-size: 18px;
+    }
   }
 }
 
-section.contact .contact-info p a.hovered,
-section.contact .contact-info p a:hover {
-  color: #000;
+.contact-info {
+  .social-icons {
+    display: block;
+
+    a {
+      transition: all 0.2s ease;
+      color: $white;
+      border: 1px solid $white;
+      border-radius: 50px;
+      background: transparent;
+
+      &:hover {
+        color: $theme-secondary-color;
+        border: 1px solid $theme-secondary-color;
+        background: $white;
+      }
+    }
+  }
+}
+
+.contact-info {
+  .btn {
+    color: $white;
+    border: 1px solid $white;
+    background: transparent;
+
+    &:hover {
+      color: $theme-secondary-color;
+      border: 1px solid $white;
+      background: $white;
+    }
+  }
 }
 
 section.contact .contact-info p,
@@ -362,59 +445,48 @@ section.contact .contact-info p a {
   text-transform: uppercase;
 }
 
-section.contact .contact-info {
-  & a {
-    & img {
-      transition: opacity 0.33s ease;
-      opacity: 0.7;
-    }
-
-    &:hover img {
-      opacity: 1;
-    }
-  }
-}
-
 section.contact .contact-info address {
   font-family: $font-secondary;
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 300;
   margin: 1rem 0 2rem;
-  color: $dark-grey;
+  letter-spacing: 1px;
+  color: $white;
 
   & span {
-    font-size: 16px;
-    font-style: italic;
+    font-weight: 600;
+
+    &.location {
+      text-transform: uppercase;
+    }
+
+    &.phone {
+      font-size: 42px;
+      @media screen and (max-width: $lg ) {
+        font-size: 24px;
+      }
+
+      @media screen and (max-width: $md ) {
+        font-size: 18px;
+      }
+
+      a {
+        color: $white;
+        transition: all 0.2s ease-in-out;
+        display: block;
+        &:hover {
+          text-decoration: none;
+          transform: scale(1.1);
+          text-shadow: 0px 6px 12px rgba(#000, 0.4)
+        }
+      }
+    }
   }
   @media screen and (max-width: $lg ) {
     font-size: 18px;
   }
 }
 
-section.social {
+section.logos {
   padding: 8rem 0 4rem;
-  background: $white;
-
-  & h4 {
-    font-size: 34px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
-
-  & .social-icons li a {
-    font-size: 32px;
-    padding: 16px;
-    transition: all 0.33s ease;
-    color: $white;
-    border-radius: 50%;
-    background: $theme-main-color;
-    @media (max-width: $sm) {
-      font-size: 16px;
-      padding: 8px;
-    }
-
-    &:hover {
-      background: $theme-secondary-color;
-    }
-  }
 }

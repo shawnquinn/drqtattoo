@@ -3,7 +3,7 @@ var wow = new WOW(
     boxClass:     'wow',      // animated element css class (default is wow)
     animateClass: 'animated', // animation css class (default is animated)
     offset:       0,          // distance to the element when triggering the animation (default is 0)
-    mobile:       true,       // trigger animations on mobile devices (default is true)
+    mobile:       false,       // trigger animations on mobile devices (default is true)
     live:         true,       // act on asynchronously loaded content (default is true)
     callback:     function(box) {
       // the callback is fired every time an animation is started
@@ -15,21 +15,10 @@ wow.init();
 
 //Begin jQuery
 jQuery(function($) {
-
-  const $header = $("#header").height();
-  const $naved = $("#nav-sticky");
-  $(window).scroll(function() {
-    const scroll = $(window).scrollTop();
-    if ( scroll >= $header+200 ) {
-        $naved.addClass("revealer");
-    } else {
-        $naved.removeClass("revealer");
-    }
-  });
 		/****************************************************************/
 		/*** //Init Headroom ***/
 		/****************************************************************/
-		var $head = $("#header > div").height();
+		var $head = $("#header-info").height();
 		$(".sticky-container").headroom({
 			// vertical offset in px before element is first unpinned
 			offset : $head,
@@ -40,23 +29,9 @@ jQuery(function($) {
 		/*** //Call Sticky Menu Waypoints ***/
 		/****************************************************************/
 		var sticky = new Waypoint.Sticky({
-			element: $('.sticky')[0]
-			//offset: 100 // Apply "stuck" when element 30px from top
+			element: $('.sticky')[0],
+			offset: -$head // Apply "stuck" when element 30px from top
 		});
-
-		/****************************************************************/
-		/*** Add/Remove Class on Scroll ***/
-		/****************************************************************/
-   $(window).scroll(function() {
-      const scroll = $(window).scrollTop();
-      const x = $(".sticky");
-
-       if ( scroll >= 175 ) {
-           $(x).addClass("scrolled");
-       } else {
-           $(x).removeClass("scrolled");
-       }
-   });
 
 
 		/****************************************************************/
@@ -237,8 +212,8 @@ jQuery(function($) {
 			mode: 'fade',
 			controls: false,
 			auto: true,
-			pause: 5500,
-			speed: 1200,
+			pause: 6000,
+			speed: 2000,
 			randomStart: false,
 			touchEnabled: true
 		});

@@ -53,10 +53,10 @@ $empty = ( empty( $lumos_options['home_headline'] ) && empty( $lumos_options['ho
 </section>
 
 
-<section class=call-to-actions>
+<section class="call-to-actions">
   <div class="container">
     <div class="row py-4">
-      <div class="col-md-4 d-flex align-items-center justify-content-around">
+      <div class="col-md-4 d-flex align-items-center justify-content-start justify-content-md-around mb-4 mb-md-0">
         <div class="icon">
           <span class="fa-stack fa-lg">
             <i class="fa fa-circle-thin fa-stack-2x"></i>
@@ -69,7 +69,7 @@ $empty = ( empty( $lumos_options['home_headline'] ) && empty( $lumos_options['ho
         </div>
       </div>
 
-      <div class="col-md-4 d-flex align-items-center justify-content-around">
+      <div class="col-md-4 d-flex align-items-center justify-content-start justify-content-md-around mb-4 mb-md-0">
         <div class="icon">
           <span class="fa-stack fa-lg">
             <i class="fa fa-circle-thin fa-stack-2x"></i>
@@ -82,7 +82,7 @@ $empty = ( empty( $lumos_options['home_headline'] ) && empty( $lumos_options['ho
         </div>
       </div>
 
-      <div class="col-md-4 d-flex align-items-center justify-content-around">
+      <div class="col-md-4 d-flex align-items-center justify-content-start justify-content-md-around mb-4 mb-md-0">
         <div class="icon">
           <span class="fa-stack fa-lg">
             <i class="fa fa-circle-thin fa-stack-2x"></i>
@@ -102,7 +102,7 @@ $empty = ( empty( $lumos_options['home_headline'] ) && empty( $lumos_options['ho
 <section class="home-content">
   <div class="container">
     <div class="row">
-      <div id="primary" class="col-md-12 wow fadeIn" data-wow-duration="1.75s" data-wow-offset="225">
+      <div id="primary" class="col-md-12 wow fadeIn" data-wow-duration="1.75s" data-wow-offset="100">
         <div id="content">
           <?php if (have_posts()) : ?>
           <?php while (have_posts()) : the_post(); ?>
@@ -148,7 +148,7 @@ $empty = ( empty( $lumos_options['home_headline'] ) && empty( $lumos_options['ho
               <h2 class="featured-title text-center text-md-left">Meet Our Surgeons<span>at Desert Oral Surgery</span></h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin maximus facilisis ligula eu blandit. Aenean aliquam lacus eget viverra iaculis. Proin facilisis auctor ex, sit amet pulvinar sapien vehicula at. Mauris scelerisque ut mauris cursus cursus. Nam auctor pharetra erat vitae consequat. Aliquam in congue metus, et scelerisque velit.</p>
               <div class="row">
-                <div class="col-md-5">
+                <div class="col-md-6">
                   <button class="btn btn-lg btn-secondary btn-block" href="<?php echo home_url(); ?>">Read More</button>
                 </div>
               </div>
@@ -160,7 +160,7 @@ $empty = ( empty( $lumos_options['home_headline'] ) && empty( $lumos_options['ho
 <section class="cta-boxes">
   <div class="container">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-sm-6 col-md-4 mb-4 wow fadeInLeftBig" data-wow-duration="1.75s" data-wow-offset="175" data-wow-delay="0.25s">
         <a href="<?php echo esc_url( home_url('') ) ?>">
           <div class="box">
             <img class="img-fluid d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/services/s-1.jpg" alt="<?php echo esc_html_e('', 'understrap') ?>">
@@ -169,7 +169,7 @@ $empty = ( empty( $lumos_options['home_headline'] ) && empty( $lumos_options['ho
         </a>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-sm-6 col-md-4 mb-4 wow fadeInLeftBig" data-wow-duration="1.75s" data-wow-offset="175" data-wow-delay="0.5s">
         <a href="<?php echo esc_url( home_url('') ) ?>">
           <div class="box">
             <img class="img-fluid d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/services/s-2.jpg" alt="<?php echo esc_html_e('', 'understrap') ?>">
@@ -178,7 +178,7 @@ $empty = ( empty( $lumos_options['home_headline'] ) && empty( $lumos_options['ho
         </a>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-sm-6 mx-sm-auto col-md-4 mb-4 wow fadeInLeftBig" data-wow-duration="1.75s" data-wow-offset="175" data-wow-delay="0.75s">
         <a href="<?php echo esc_url( home_url('') ) ?>">
           <div class="box">
             <img class="img-fluid d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/services/s-3.jpg" alt="<?php echo esc_html_e('', 'understrap') ?>">
@@ -191,7 +191,7 @@ $empty = ( empty( $lumos_options['home_headline'] ) && empty( $lumos_options['ho
 </section>
 
 <section class="review">
-	<div class="container wow fadeIn" data-wow-duration="2s" data-wow-offset="225">
+	<div class="container wow fadeIn" data-wow-duration="2s" data-wow-offset="175">
     <div class="row">
       <div class="col-12">
         <h2 class="featured-title text-center">Testimoials<span>What Our Patients Are Saying</span></h2>

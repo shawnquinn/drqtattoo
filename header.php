@@ -58,20 +58,20 @@ $lumos_options = lumos_get_options();
 
       <div class="col-md-8">
         <div id="info-contact" class="row align-items-center">
-          <div class="col-md-4 text-center text-md-right">
+          <div class="col-md-6 col-lg-4 text-center text-md-right">
             <p>Schedule a Consultation: </p>
           </div>
 
-          <div class="col-md-4 text-center">
+          <div class="col-md-6 col-lg-4 text-center">
             <p>
               Palm Springs 760.327.1509<br />
               Palm Desert 760.346.7431
             </p>
           </div>
 
-          <div class="col-md-4 text-center">
+          <div class="col-md-12 col-lg-4 text-center">
             <?php
-  					echo '<ul class="social-icons text-center mt-4 mt-md-0">';
+  					echo '<ul class="social-icons text-center py-3 mb-3">';
   					if (!empty($lumos_options['facebook_uid'])) 		echo '<li><a target="_blank" class="icon-facebook" href="' . $lumos_options['facebook_uid'] . '">'.'</a></li>';
   					if (!empty($lumos_options['twitter_uid'])) 			echo '<li><a target="_blank" class="icon-twitter" href="' . $lumos_options['twitter_uid'] . '">'.'</a></li>';
   					if (!empty($lumos_options['google_plus_uid'])) 	echo '<li><a target="_blank" class="icon-google-plus" href="' . $lumos_options['google_plus_uid'] . '">'.'</a></li>';
@@ -85,76 +85,37 @@ $lumos_options = lumos_get_options();
   					?>
           </div>
         </div>
-        <nav id="access">
-            <ul class="mobile-nav d-md-none">
-              <li>
-                <a href="<?php echo home_url('/contact/'); ?>">
-                  <i class="fa fa-envelope" aria-hidden="true">
-                  </i>
-                </a>
-              </li>
-              <li>
-                <a href="tel:+1-347-292-9877">
-                  <i class="fa fa-phone" aria-hidden="true">
-                  </i>
-                </a>
-              </li>
-            </ul>
-            <?php wp_nav_menu(array( 'theme_location' => 'header-nav','menu_class' => 'sf-menu menu-slick')); ?>
-          </nav><!-- nav#access -->
+        <div class="sticky-container sticky">
+          <div class="container-fluid">
+            <div class="row align-items-center">
+              <div class="col-lg-12">
+                <div id="main-nav" class="row">
+                  <div class="col-12 p-0">
+                    <nav id="access">
+                        <ul class="mobile-nav d-md-none">
+                          <li>
+                            <a href="<?php echo home_url('/contact/'); ?>">
+                              <i class="fa fa-envelope" aria-hidden="true">
+                              </i>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="tel:+1-">
+                              <i class="fa fa-phone" aria-hidden="true">
+                              </i>
+                            </a>
+                          </li>
+                        </ul>
+                        <?php wp_nav_menu(array( 'theme_location' => 'header-nav','menu_class' => 'sf-menu menu-slick')); ?>
+                      </nav><!-- nav#access -->
+                  </div><!-- col -->
+                </div><!-- row -->
+              </div><!-- col -->
+            </div><!-- row -->
+          </div><!-- container-fluid -->
+        </div>
       </div>
     </div>
-  </div>
-
-  <div id="nav-sticky" class="sticky-container sticky">
-		<div class="container-fluid">
-			<div class="row align-items-center">
-				<div class="col-lg-12">
-
-          <?php if(!is_frontpage) : ?>
-					<div id="logo" >
-				      <h1>
-				        <a href="<?php echo home_url('/'); ?>">
-				          <img class="img-fluid d-block mx-auto" src="<?php header_image(); ?>" width="<?php if (function_exists('get_custom_header')) {
-                      echo get_custom_header() -> width;
-                  } else {
-                      echo HEADER_IMAGE_WIDTH;
-                  } ?>" height="<?php if (function_exists('get_custom_header')) {
-                      echo get_custom_header() -> height;
-                  } else {
-                      echo HEADER_IMAGE_HEIGHT;
-                  } ?>" alt="<?php bloginfo('name'); ?>" />
-				        </a>
-				      </h1>
-				    </div><!-- end of #logo -->
-
-        <?php endif; ?>
-
-
-					<div id="main-nav" class="row">
-						<div class="col-12 p-0">
-							<nav id="access">
-						      <ul class="mobile-nav d-md-none">
-						        <li>
-						          <a href="<?php echo home_url('/contact/'); ?>">
-						            <i class="fa fa-envelope" aria-hidden="true">
-						            </i>
-						          </a>
-						        </li>
-						        <li>
-						          <a href="tel:+1-347-292-9877">
-						            <i class="fa fa-phone" aria-hidden="true">
-						            </i>
-						          </a>
-						        </li>
-						      </ul>
-						      <?php wp_nav_menu(array( 'theme_location' => 'header-nav','menu_class' => 'sf-menu menu-slick')); ?>
-						    </nav><!-- nav#access -->
-						</div><!-- col -->
-					</div><!-- row -->
-				</div><!-- col -->
-			</div><!-- row -->
-		</div><!-- container-fluid -->
   </div>
   <!-- .container-->
   </div>
@@ -168,19 +129,28 @@ $lumos_options = lumos_get_options();
 
   <div class="float-box d-none d-md-block">
     <a class="clicker" href="<?php echo home_url(''); ?>">
-      <span>Contact Us
+      <span>Contact Us | Location
       </span>
     </a>
     <div class="row">
 	    	<div class="col col-6">
-	      <address>
-          <span>Address:</span><br/>
-          185 Montague St, 4th Floor<br/>
-          Brooklyn, NY 11201<br/>
-          Phone: (347) 292-9877
-	      </address>
+          <address>
+          <span>Palm Springs</span><br/>
+          1900 E. Tahquitz Canyon Way<br/>
+          Suite A1<br/>
+          Palm Springs, CA 92262
+          </address>
+          <address>
+            <span>Palm Desert</span><br/>
+            72-780 El Paseo<br/>
+            Suite E-1<br/>
+            PalmDesert, CA 92260
+          </address>
 	      <a href="<?php echo home_url('/location/'); ?>">
-	        <img class="img-fluid mt-2" src="<?php echo get_template_directory_uri(); ?>/img/map.png" alt="Location" />
+	        <img class="img-fluid mt-2" src="<?php echo get_template_directory_uri(); ?>/img/map-ps.png" alt="Location" />
+	      </a>
+        <a href="<?php echo home_url('/location/'); ?>">
+	        <img class="img-fluid mt-2" src="<?php echo get_template_directory_uri(); ?>/img/map-pd.png" alt="Location" />
 	      </a>
 	    </div>
 	    <!-- end of col-1-3 -->

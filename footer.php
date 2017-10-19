@@ -13,66 +13,82 @@ $lumos_options = lumos_get_options();
 <section id="px-3" class="contact">
 		<div class="container-fluid">
 			<div class="row align-items-center">
-				<div id="ps" class="col-md-4 px-0">
+				<div id="ps" class="col-md-4 px-0 d-none d-lg-block">
 					<img class="img-fluid d-block mx-auto w-100" src="<?php echo get_template_directory_uri(); ?>/img/palm-springs.jpg" alt="<?php echo esc_html_e('', 'understrap') ?>">
 					<a href="<?php echo esc_url( home_url('') ) ?>">
-						<img class="img-fluid d-block mx-auto w-100" src="<?php echo get_template_directory_uri(); ?>/img/" alt="<?php echo esc_html_e('', 'understrap') ?>">
+						<img class="img-fluid d-block mx-auto w-100" src="<?php echo get_template_directory_uri(); ?>/img/map-ps.png" alt="<?php echo esc_html_e('', 'understrap') ?>">
 					</a>
 				</div>
 
-				<div class="col-md-4 contact-info">
+				<div class="col-lg-4 contact-info">
 							<div class="row">
 								<div class="col-12">
-									<h3 class="featured-title text-center">Contact Us <span>Schedule Your Next Appointement</span></h3>
+									<h3 class="featured-title text-center wow fadeIn" data-wow-duration="1.75s" data-wow-offset="175">Locations</h3>
+									<h4 class="text-center wow fadeIn" data-wow-duration="1.75s" data-wow-offset="175">Palm Springs</h4>
+									<h4 class="text-center wow fadeIn" data-wow-duration="1.75s" data-wow-offset="175">Palm Desert</h4>
 								</div>
 							</div><!-- row -->
+
+							<div class="row wow fadeIn" data-wow-duration="1.75s" data-wow-offset="175">
+							  <div class="col-12">
+									<?php
+									echo '<ul class="social-icons text-center mx-auto py-4">';
+									if (!empty($lumos_options['facebook_uid'])) 		echo '<li><a target="_blank" class="icon-facebook" href="' . $lumos_options['facebook_uid'] . '">'.'</a></li>';
+									if (!empty($lumos_options['twitter_uid'])) 			echo '<li><a target="_blank" class="icon-twitter" href="' . $lumos_options['twitter_uid'] . '">'.'</a></li>';
+									if (!empty($lumos_options['google_plus_uid'])) 	echo '<li><a target="_blank" class="icon-google-plus" href="' . $lumos_options['google_plus_uid'] . '">'.'</a></li>';
+									if (!empty($lumos_options['youtube_uid'])) 			echo '<li><a target="_blank" class="icon-youtube" href="' . $lumos_options['youtube_uid'] . '">'.'</a></li>';
+									if (!empty($lumos_options['linkedin_uid'])) 		echo '<li><a target="_blank" class="icon-linkedin" href="' . $lumos_options['linkedin_uid'] . '">'.'</a></li>';
+									if (!empty($lumos_options['yelp_uid'])) 				echo '<li><a target="_blank" class="icon-yelp" href="' . $lumos_options['yelp_uid'] . '">'.'</a></li>';
+									if (!empty($lumos_options['blogger_uid'])) 			echo '<li><a target="_blank" class="icon-blogger" href="' . $lumos_options['blogger_uid'] . '">'.'</a></li>';
+									if (!empty($lumos_options['instagram_uid'])) 		echo '<li><a target="_blank" class="icon-instagram" href="' . $lumos_options['instagram_uid'] . '">'.'</a></li>';
+									if (!empty($lumos_options['foursquare_uid'])) 	echo '<li><a target="_blank" class="icon-foursquare" href="' . $lumos_options['foursquare_uid'] . '">'.'</a></li>';
+									echo '</ul><!-- end of .social-icons -->';
+									?>
+							  </div>
+							</div>
+
 							<div class="row align-items-center">
-							<div class="col-12">
-								<address class="text-center">
-									<span>Address:</span><br/>
-									185 Montague St, 4th Floor | Brooklyn, NY 11201<br/><br/>
-									<span>Phone:</span><br/>
-									(347) 292-9877
-								</address>
-							</div>
+								<div class="col-12">
+									<address class="text-center wow fadeIn" data-wow-duration="1.75s" data-wow-offset="175">
+										<span class="location">Palm Springs</span><br/>
+										1900 E. Tahquitz Canyon Way<br/>
+										Suite A1<br/>
+										Palm Springs, CA 92262<br/>
+										<span class="phone"><a href="tel:+1-760-327-1509"><?php echo esc_html_e('760.327.1509', 'understrap') ?></a></span>
+									</address>
+
+									<address class="text-center wow fadeIn" data-wow-duration="1.75s" data-wow-offset="175">
+										<span class="location">Palm Desert</span><br/>
+										72-780 El Paseo<br/>
+										Suite E-1<br/>
+										Palm Desert, CA 92260<br/>
+										<span class="phone"><a href="tel:+1-760-346-7431"><?php echo esc_html_e('760.346.7431', 'understrap') ?></a></span>
+									</address>
+								</div>
 						</div>
-						<div class="row">
-							<div class="col-12 px-0">
-								<a href="<?php echo home_url(''); ?>">
-									<img class="img-fluid d-block mx-auto" src="<?php echo get_template_directory_uri('/location/'); ?>/img/map.png" alt="Location" />
-								</a>
-							</div>
+
+						<div class="row wow fadeIn" data-wow-duration="1.75s" data-wow-offset="175">
+						  <div class="col-xl-7 mx-auto">
+						    <a class="btn btn-secondary btn-lg btn-block" href="<?php echo esc_url( home_url('') ) ?>"><?php echo esc_html_e('Learn More', 'understrap') ?></a>
+						  </div>
 						</div>
 				</div><!-- col -->
 
-				<div id="pd" class="col-md-4 px-0">
+				<div id="pd" class="col-md-4 px-0 d-none d-lg-block">
 					<img class="img-fluid d-block mx-auto w-100" src="<?php echo get_template_directory_uri(); ?>/img/palm-desert.jpg" alt="<?php echo esc_html_e('', 'understrap') ?>">
 					<a href="<?php echo esc_url( home_url('') ) ?>">
-						<img class="img-fluid d-block mx-auto w-100" src="<?php echo get_template_directory_uri(); ?>/img/map.png" alt="<?php echo esc_html_e('', 'understrap') ?>">
+						<img class="img-fluid d-block mx-auto w-100" src="<?php echo get_template_directory_uri(); ?>/img/map-pd.png" alt="<?php echo esc_html_e('', 'understrap') ?>">
 					</a>
 				</div>
 			</div><!-- row -->
 		</div><!-- .container -->
 	</section><!-- end section.contact -->
 
-	<section class="social">
+	<section class="logos d-none d-md-block">
 		<div class="container">
-			<div class="row text-center">
+			<div class="row text-center wow fadeIn" data-wow-duration="1.75s" data-wow-offset="175">
 				<div class="col-12">
-					<h4 class="d-inline">Stay Connected:</h4>
-					<?php
-					echo '<ul class="social-icons text-center mt-4 mt-md-0">';
-					if (!empty($lumos_options['facebook_uid'])) 		echo '<li><a target="_blank" class="icon-facebook" href="' . $lumos_options['facebook_uid'] . '">'.'</a></li>';
-					if (!empty($lumos_options['twitter_uid'])) 			echo '<li><a target="_blank" class="icon-twitter" href="' . $lumos_options['twitter_uid'] . '">'.'</a></li>';
-					if (!empty($lumos_options['google_plus_uid'])) 	echo '<li><a target="_blank" class="icon-google-plus" href="' . $lumos_options['google_plus_uid'] . '">'.'</a></li>';
-					if (!empty($lumos_options['youtube_uid'])) 			echo '<li><a target="_blank" class="icon-youtube" href="' . $lumos_options['youtube_uid'] . '">'.'</a></li>';
-					if (!empty($lumos_options['linkedin_uid'])) 		echo '<li><a target="_blank" class="icon-linkedin" href="' . $lumos_options['linkedin_uid'] . '">'.'</a></li>';
-					if (!empty($lumos_options['yelp_uid'])) 				echo '<li><a target="_blank" class="icon-yelp" href="' . $lumos_options['yelp_uid'] . '">'.'</a></li>';
-					if (!empty($lumos_options['blogger_uid'])) 			echo '<li><a target="_blank" class="icon-blogger" href="' . $lumos_options['blogger_uid'] . '">'.'</a></li>';
-					if (!empty($lumos_options['instagram_uid'])) 		echo '<li><a target="_blank" class="icon-instagram" href="' . $lumos_options['instagram_uid'] . '">'.'</a></li>';
-					if (!empty($lumos_options['foursquare_uid'])) 	echo '<li><a target="_blank" class="icon-foursquare" href="' . $lumos_options['foursquare_uid'] . '">'.'</a></li>';
-					echo '</ul><!-- end of .social-icons -->';
-					?>
+					<img class="img-fluid d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/creds.png" alt="<?php echo esc_html_e('Credentials', 'understrap') ?>">
 				</div>
 			</div>
 		</div>
@@ -83,7 +99,7 @@ $lumos_options = lumos_get_options();
     <footer id="footer">
     <div id="footer-info">
         <div class="bottom">
-            <div class="container">
+            <div class="container wow fadeIn" data-wow-duration="1.75s" data-wow-offset="175">
 	            <div class="row py-4">
 		            <div id="footer-1" class="col-md-3 my-1 d-none d-md-block">
 				        <h4>Quick Links</h4>
@@ -124,24 +140,32 @@ $lumos_options = lumos_get_options();
 									<div class="row">
 										<div class="col-12">
 											<address>
-											Vantage Plastic Surgery<br/>
-											185 Montague Street, 4th Floor<br/>
-											Brooklyn, NY 11201<br/>
-											Phone: (347) 292-9877<br/>
+											<span>Palm Springs</span><br/>
+											1900 E. Tahquitz Canyon Way<br/>
+											Suite A1<br/>
+											Palm Springs, CA 92262
+											</address>
+											<address>
+												<span>Palm Desert</span><br/>
+												72-780 El Paseo<br/>
+												Suite E-1<br/>
+												PalmDesert, CA 92260
 											</address>
 										</div><!-- col -->
 									</div><!-- row -->
-									<div class="row">
-										<div class="footer-copyright col-12 text-center text-md-left">
-	                  	<div class="col-12">
-												<?php esc_attr_e('Copyright &copy;', 'lumos'); ?><?php _e(date('Y')); ?><a href="<?php echo home_url('/') ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>."> <?php bloginfo('name').esc_attr_e('.', 'lumos'); ?>
-												</a>
-												<?php esc_attr_e('All Rights Reserved.', 'lumos'); ?> <?php esc_attr_e('Designed by', 'lumos'); ?> <a href="http://creativetakemedical.com/" title="<?php echo esc_attr_e('CreativeTake Medical', 'lumos'); ?>" target="_blank">CreativeTake Web.</a>
-	                  	</div>
-	                  </div><!-- col -->
-	                </div><!-- row -->
 								</div>
+
+
 	            </div><!-- .row -->
+							<div class="row">
+								<div class="footer-copyright col-12 text-center">
+									<div class="col-12">
+										<?php esc_attr_e('Copyright &copy;', 'lumos'); ?><?php _e(date('Y')); ?><a href="<?php echo home_url('/') ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>."> <?php bloginfo('name').esc_attr_e('.', 'lumos'); ?>
+										</a>
+										<?php esc_attr_e('All Rights Reserved.', 'lumos'); ?> <?php esc_attr_e('Designed by', 'lumos'); ?> <a href="http://creativetakemedical.com/" title="<?php echo esc_attr_e('CreativeTake Medical', 'lumos'); ?>" target="_blank">CreativeTake Web.</a>
+									</div>
+								</div><!-- col -->
+							</div>
             </div><!-- .container -->
         </div><!-- .bottom -->
 
