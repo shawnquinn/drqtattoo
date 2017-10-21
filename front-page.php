@@ -160,7 +160,7 @@ $empty = ( empty( $lumos_options['home_headline'] ) && empty( $lumos_options['ho
 <section class="cta-boxes">
   <div class="container">
     <div class="row">
-      <div class="col-sm-6 col-md-4 mb-4 wow fadeInLeftBig" data-wow-duration="1.75s" data-wow-offset="175" data-wow-delay="0.25s">
+      <div class="col-sm-6 col-md-4 mb-4 wow fadeInLeftBig" data-wow-duration="1.75s" data-wow-offset="125" data-wow-delay="0.25s">
         <a href="<?php echo esc_url( home_url('') ) ?>">
           <div class="box">
             <img class="img-fluid d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/services/s-1.jpg" alt="<?php echo esc_html_e('', 'understrap') ?>">

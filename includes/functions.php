@@ -43,8 +43,8 @@ function ctw_enqueue_scripts_and_styles() {
 		'animate'						=> get_template_directory_uri().'/assets/css/animate.css',
 		'font-awesome'			=> get_template_directory_uri().'/assets/css/font-awesome.min.css',
 		'slicknav'					=> get_template_directory_uri().'/assets/css/slicknav.min.css',
-		//'style-sheet'				=> get_template_directory_uri().'/style.min.css',
-		'dev-style-sheet'	=> get_template_directory_uri().'/style.css'
+		'style-sheet'				=> get_template_directory_uri().'/style.min.css',
+		//'dev-style-sheet'	=> get_template_directory_uri().'/style.css'
 	);
 
 	$ctw_registered_scripts = array(

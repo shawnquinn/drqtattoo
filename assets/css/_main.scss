@@ -524,6 +524,10 @@ a.btn-secondary:hover {
   box-shadow: 0 4px 8px rgba(#333, .5);
 }
 
+.btn:hover {
+  transform: translateY(-2px);
+}
+
 .slider .btn,
 .slider a.btn {
   font-weight: 400;
@@ -877,7 +881,7 @@ a.btn-secondary:hover {
   text-decoration: none;
   color: #fff !important;
   border-bottom: 0;
-  background-color: desaturate(lighten($theme-main-color, 20%), 25%) !important;
+  background-color: desaturate(lighten($theme-main-color, 20%), 25%);
 }
 
 #access #searchform {
@@ -2741,20 +2745,12 @@ div.wpcf7-validation-errors {
 
       li {
         display: flex;
+        flex: 1 1;
+        justify-content: center;
+        border-right: 2px solid #fff;
 
-        &:last-child::after {
-          display: none;
+        &:last-child {
           border: 0;
-        }
-
-        &::after {
-          display: inline-block;
-          margin-left: 70%;
-          content: '';
-          border-right: 2px solid #fff;
-          @media screen and (max-width: $md ) {
-            display: none;
-          }
         }
 
         a {
