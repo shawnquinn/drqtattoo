@@ -31,13 +31,24 @@ $empty = ( empty( $lumos_options['home_headline'] ) && empty( $lumos_options['ho
 
   <div class="boxed">
     <div class="container">
-      <div class="row">
-        <div class="col-12" style="margin-top:auto; padding-bottom: 6rem">
-                <nav>
-                  <?php wp_nav_menu(array( 'theme_location' => 'slider-nav','menu_class' => 'slider-nav')); ?>
-                </nav>
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <div id="logo" >
+            <h1>
+              <a href="<?php echo home_url('/'); ?>">
+                <img class="img-fluid d-block mx-auto" src="<?php header_image(); ?>" width="<?php if (function_exists('get_custom_header')) {
+                    echo get_custom_header() -> width;
+                } else {
+                    echo HEADER_IMAGE_WIDTH;
+                } ?>" height="<?php if (function_exists('get_custom_header')) {
+                    echo get_custom_header() -> height;
+                } else {
+                    echo HEADER_IMAGE_HEIGHT;
+                } ?>" alt="<?php bloginfo('name'); ?>" />
+              </a>
+            </h1>
+          </div><!-- end of #logo -->
         </div>
-        <!-- col -->
       </div>
       <!-- row -->
     </div>
@@ -49,53 +60,50 @@ $empty = ( empty( $lumos_options['home_headline'] ) && empty( $lumos_options['ho
     <li id="one"></li>
     <li id="two"></li>
   </ul>
-  <!-- bx-slider -->
-</section>
 
-
-<section class="call-to-actions">
+<section class="call-to-actions d-none d-md-block">
   <div class="container">
-    <div class="row py-4">
-      <div class="col-md-4 d-flex align-items-center justify-content-start justify-content-md-around mb-4 mb-md-0">
-        <div class="icon">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle-thin fa-stack-2x"></i>
-            <i class="fa fa-map-marker fa-stack-1x fa-inverse"></i>
-          </span>
-        </div>
-        <div class="contacts">
-          <p>Locations</p>
-          <p><a href="<?php echo esc_url( home_url('location') ) ?>"><?php echo esc_html_e('Palm Springs', 'understrap') ?></a> | <a href="<?php echo esc_url( home_url('location') ) ?>"><?php echo esc_html_e('Palm Desert', 'understrap') ?></a></p>
-        </div>
-      </div>
+    <div class="row">
+      <div id="info" class="col-lg-9 col-xl-6 py-1">
+        <div class="row py-0">
+          <div class="col-md-4 d-flex align-items-center justify-content-start justify-content-md-around mb-4 mb-md-0">
+            <div class="icon">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-phone fa-stack-1x fa-inverse"></i>
+              </span>
+            </div>
+            <div class="contacts">
+              <p><a href="tel:+1-760-324-2620"><?php echo esc_html_e('(760) 324-2620', 'understrap'); ?></a></p>
+            </div>
+          </div>
 
-      <div class="col-md-4 d-flex align-items-center justify-content-start justify-content-md-around mb-4 mb-md-0">
-        <div class="icon">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle-thin fa-stack-2x"></i>
-            <i class="fa fa-mobile fa-stack-1x fa-inverse"></i>
-          </span>
-        </div>
-        <div class="contacts">
-          <p>Call for an Appointment</p>
-          <p><a href="tel:+1-760-327-1509"><?php echo esc_html_e('760.327.1509', 'understrap') ?></a> | <a href="tel:+1-760-346-7431"><?php echo esc_html_e('760.346.7431', 'understrap') ?></a></p>
-        </div>
-      </div>
+          <div class="col-md-4 d-flex align-items-center">
+          <?php
+            echo '<ul class="social-icons w-100 d-flex justify-content-around">';
+            if (!empty($lumos_options['facebook_uid'])) 		echo '<li><a target="_blank" class="icon-facebook" href="' . $lumos_options['facebook_uid'] . '">'.'</a></li>';
+            if (!empty($lumos_options['twitter_uid'])) 			echo '<li><a target="_blank" class="icon-twitter" href="' . $lumos_options['twitter_uid'] . '">'.'</a></li>';
+            if (!empty($lumos_options['google_plus_uid'])) 	echo '<li><a target="_blank" class="icon-google-plus" href="' . $lumos_options['google_plus_uid'] . '">'.'</a></li>';
+            if (!empty($lumos_options['youtube_uid'])) 			echo '<li><a target="_blank" class="icon-youtube" href="' . $lumos_options['youtube_uid'] . '">'.'</a></li>';
+            if (!empty($lumos_options['linkedin_uid'])) 		echo '<li><a target="_blank" class="icon-linkedin" href="' . $lumos_options['linkedin_uid'] . '">'.'</a></li>';
+            if (!empty($lumos_options['yelp_uid'])) 				echo '<li><a target="_blank" class="icon-yelp" href="' . $lumos_options['yelp_uid'] . '">'.'</a></li>';
+            if (!empty($lumos_options['blogger_uid'])) 			echo '<li><a target="_blank" class="icon-blogger" href="' . $lumos_options['blogger_uid'] . '">'.'</a></li>';
+            if (!empty($lumos_options['instagram_uid'])) 		echo '<li><a target="_blank" class="icon-instagram" href="' . $lumos_options['instagram_uid'] . '">'.'</a></li>';
+            if (!empty($lumos_options['foursquare_uid'])) 	echo '<li><a target="_blank" class="icon-foursquare" href="' . $lumos_options['foursquare_uid'] . '">'.'</a></li>';
+            echo '</ul><!-- end of .social-icons -->';
+            ?>
+          </div>
 
-      <div class="col-md-4 d-flex align-items-center justify-content-start justify-content-md-around mb-4 mb-md-0">
-        <div class="icon">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle-thin fa-stack-2x"></i>
-            <i class="fa fa-calendar fa-stack-1x fa-inverse"></i>
-          </span>
-        </div>
-        <div class="contacts">
-          <p>Schedule a Consultation</p>
-          <p><a href="<?php echo esc_url( home_url('') ) ?>"><?php echo esc_html_e('Book Online', 'understrap') ?></a></p>
+          <div class="col-md-4 d-flex align-items-center justify-content-start justify-content-md-around mb-4 mb-md-0">
+            <div class="contacts">
+              <p><a href="<?php echo esc_url( home_url('') ) ?>"><?php echo esc_html_e('Book Online', 'understrap') ?> <i class="fa fa-angle-right"></i></a></p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
+</section>
+  <!-- bx-slider -->
 </section>
 
 <!--end of .slider -->

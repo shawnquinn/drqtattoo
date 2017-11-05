@@ -6,7 +6,7 @@ if ( !defined('ABSPATH')) exit;
 /**
  * Theme's Action Hooks
 
-
+*/
 
 /**
  * Just after opening <body> tag

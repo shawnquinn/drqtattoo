@@ -36,6 +36,7 @@ $lumos_options = lumos_get_options();
 
 <header id="header">
 
+<?php if ( !is_front_page() ) : ?>
   <div id="header-info" class="container">
     <div class="row align-items-center">
       <div class="col-md-4">
@@ -85,6 +86,7 @@ $lumos_options = lumos_get_options();
   					?>
           </div>
         </div>
+
         <div class="sticky-container sticky">
           <div class="container-fluid">
             <div class="row align-items-center">
@@ -113,13 +115,46 @@ $lumos_options = lumos_get_options();
               </div><!-- col -->
             </div><!-- row -->
           </div><!-- container-fluid -->
-        </div>
-      </div>
+        </div><!-- sticky-container -->
+      </div><!-- column -->
     </div>
   </div>
-  <!-- .container-->
+  <!-- #header-info .container-->
+  
+  <?php endif; ?>
+  
+  <div id="nav-menu" class="container">
+    <div class="row">
+      <nav id="access">
+
+      <?php
+            echo '<ul class="social-icons d-md-none d-flex justify-content-start">';
+            if (!empty($lumos_options['facebook_uid'])) 		echo '<li><a target="_blank" class="icon-facebook" href="' . $lumos_options['facebook_uid'] . '">'.'</a></li>';
+            if (!empty($lumos_options['twitter_uid'])) 			echo '<li><a target="_blank" class="icon-twitter" href="' . $lumos_options['twitter_uid'] . '">'.'</a></li>';
+            if (!empty($lumos_options['google_plus_uid'])) 	echo '<li><a target="_blank" class="icon-google-plus" href="' . $lumos_options['google_plus_uid'] . '">'.'</a></li>';
+            if (!empty($lumos_options['youtube_uid'])) 			echo '<li><a target="_blank" class="icon-youtube" href="' . $lumos_options['youtube_uid'] . '">'.'</a></li>';
+            if (!empty($lumos_options['linkedin_uid'])) 		echo '<li><a target="_blank" class="icon-linkedin" href="' . $lumos_options['linkedin_uid'] . '">'.'</a></li>';
+            if (!empty($lumos_options['yelp_uid'])) 				echo '<li><a target="_blank" class="icon-yelp" href="' . $lumos_options['yelp_uid'] . '">'.'</a></li>';
+            if (!empty($lumos_options['blogger_uid'])) 			echo '<li><a target="_blank" class="icon-blogger" href="' . $lumos_options['blogger_uid'] . '">'.'</a></li>';
+            if (!empty($lumos_options['instagram_uid'])) 		echo '<li><a target="_blank" class="icon-instagram" href="' . $lumos_options['instagram_uid'] . '">'.'</a></li>';
+            if (!empty($lumos_options['foursquare_uid'])) 	echo '<li><a target="_blank" class="icon-foursquare" href="' . $lumos_options['foursquare_uid'] . '">'.'</a></li>';
+            echo '<li><a href="/contact/"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>';
+            echo '<li><a href="tel:+1-"><i class="fa fa-phone" aria-hidden="true"></i></a></li>';
+            echo '</ul><!-- end of .social-icons -->';
+            ?>
+        <ul class="mobile-nav d-none">
+          <li><a href="<?php echo home_url('/contact/'); ?>"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+          <li>
+            <a href="tel:+1-">
+              <i class="fa fa-phone" aria-hidden="true">
+              </i>
+            </a>
+          </li>
+        </ul>
+        <?php wp_nav_menu(array( 'theme_location' => 'header-nav','menu_class' => 'sf-menu menu-slick')); ?>
+      </nav><!-- nav#access -->
+    </div>
   </div>
-  <!-- .container-->
 
 </header>
 <!-- #header -->
@@ -127,7 +162,7 @@ $lumos_options = lumos_get_options();
 
 <div id="main">
 
-  <div class="float-box d-none d-md-block">
+  <div class="float-box d-none" hidden >
     <a class="clicker" href="<?php echo home_url(''); ?>">
       <span>Contact Us | Location
       </span>

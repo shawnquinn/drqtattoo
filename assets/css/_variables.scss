@@ -3,16 +3,16 @@
 //
 
 //Typography
-@import url( 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i');
+@import url( 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i|Sorts+Mill+Goudy:400,400i');
 
-$font-primary: 'Open Sans', serif;
-$font-secondary: 'Open Sans', sans-serif;
+$font-secondary: 'Open Sans', serif;
+$font-primary: 'Sorts Mill Goudy', serif;
 $body-font-size: 18px;
 $nav-font-size: 16px;
 
 // Theme Colors
-$theme-main-color: #5F6369;
-$theme-secondary-color: #007dc4;
+$theme-main-color: #7d8589;
+$theme-secondary-color: #c0d098;
 $theme-accent-color: $theme-secondary-color;
 $theme-tertiary-color: #4c6e81;
 $theme-quaternary-color: #003d60;

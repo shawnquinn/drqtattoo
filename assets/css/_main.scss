@@ -126,7 +126,6 @@ blockquote {
   padding: 0 3rem;
   text-align: left;
   border-left: 3px solid #ebebeb;
-
   span {
     font-weight: normal;
     font-style: italic;
@@ -214,7 +213,10 @@ a img {
   -ms-flex-pack: center;
   justify-content: center;
 }
+
+
 /* Mobile Nav Icon Buttons */
+
 .mobile-nav {
   position: absolute;
   z-index: 999;
@@ -231,7 +233,7 @@ a img {
   -webkit-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
-  color: $theme-secondary-color;
+  color: $white;
 }
 
 .mobile-nav li a i {
@@ -241,8 +243,11 @@ a img {
 .mobile-nav li a:hover {
   color: $theme-accent-color;
 }
+
+
 /*** Structures and Defaults
 ****************************************************************/
+
 body {
   font-family: $font-secondary;
   font-size: 16px;
@@ -269,8 +274,11 @@ body {
   padding-bottom: 0;
   background-color: #fff;
 }
+
+
 /*** Fonts and Social Media ICOs
 ****************************************************************/
+
 @font-face {
   font-family: 'icomoon';
   font-weight: normal;
@@ -340,8 +348,11 @@ body {
 .icon-tumblr:before {
   content: '\77';
 }
+
+
 /*** Typography
 ****************************************************************/
+
 h1,
 h1 a,
 h2,
@@ -422,13 +433,15 @@ h6 {
   font-size: 18px;
   text-transform: uppercase;
 }
+
+
 /*** Links
 ****************************************************************/
+
 a {
   font-weight: normal;
   text-decoration: none;
   color: $theme-main-color;
-
   &:active,
   &:focus,
   &:hover {
@@ -494,7 +507,7 @@ a.btn-primary:hover {
 
 .btn-primary.focus,
 .btn-primary:focus {
-  -webkit-box-shadow: 0 0 0 2px rgba($theme-secondary-color,.5);
+  -webkit-box-shadow: 0 0 0 2px rgba($theme-secondary-color, .5);
   box-shadow: 0 0 0 2px rgba($theme-secondary-color, .5);
 }
 
@@ -568,7 +581,6 @@ a.btn-secondary:hover {
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
   background: $theme-accent-color;
-
   &.hidden-reveal {
     right: 0;
   }
@@ -717,17 +729,18 @@ a.btn-secondary:hover {
 .float-box .col {
   border-left: 1px solid #fff;
 }
+
+
 /*** Header ***/
+
 #header {
   position: relative;
   z-index: 9999;
   background: transparent;
-
   &-info {
     position: relative;
     z-index: 99999;
   }
-
   #info-contact {
     border-bottom: 1px solid $theme-secondary-color;
   }
@@ -806,11 +819,37 @@ a.btn-secondary:hover {
   font-weight: 400;
   font-style: italic;
   display: block;
-  color: #0e3087;
+  color: $black;
 }
+
+
 /****************************************************************/
+
+
 /*** Top Navigation ***/
+
+
 /****************************************************************/
+
+#nav-menu {
+  position: absolute;
+  margin: 0 auto 0 auto;
+  left: 0;
+  right: 0;
+  top: 2rem;
+  transition: max-width 0.2s ease;
+  @media screen and (max-width: $sm) {
+    top: 0;
+    max-width: 100%;
+  }
+}
+
+.fixed-nav #nav-menu {
+  position: fixed;
+  max-width: 100%;
+  top: 0;
+  box-shadow: 0px 3px 6px rgba($black, 0.2);
+}
 
 #access {
   position: relative;
@@ -818,7 +857,7 @@ a.btn-secondary:hover {
   /* For browsers that do not support gradients */
   display: block;
   width: 100%;
-  background: rgba($white, .9);
+  background: rgba($theme-main-color, .9);
 }
 
 #access,
@@ -846,7 +885,6 @@ a.btn-secondary:hover {
 .sticky {
   &.scrolled {
     padding-top: 0;
-
     & .container {
       width: 100%;
     }
@@ -864,15 +902,20 @@ a.btn-secondary:hover {
   height: 50px;
   margin: 0;
   padding: 0 1.25rem;
-  transition: color 0.2s linear;
   text-decoration: none;
   text-transform: uppercase;
-  color: #58595b;
-
+  color: $white;
+  background-color: rgba($white, 0);
+  transition: all 0.2s ease;
   &:hover {
     text-decoration: none;
-    color: #007dc4;
+    color: $white;
     border-bottom: 0;
+    background-color: rgba($white, 0.5);
+  }
+  @media (max-width: $lg) {
+    font-size: 12px;
+    padding: 0 0.5rem;
   }
 }
 
@@ -956,19 +999,19 @@ a.btn-secondary:hover {
   display: none;
 }
 
-.sf-menu > li {
+.sf-menu>li {
   /* For Hover */
   float: none;
   margin-left: 0;
   padding-bottom: 3rem;
 }
 
-.sf-menu > li:hover {
+.sf-menu>li:hover {
   cursor: pointer;
 }
 
-.sf-menu li.sfHover > ul,
-.sf-menu li:hover > ul {
+.sf-menu li.sfHover>ul,
+.sf-menu li:hover>ul {
   display: block;
 }
 
@@ -989,7 +1032,10 @@ a.btn-secondary:hover {
   color: #111 !important;
   background: #fff !important;
 }
+
+
 /*** point all arrows down ***/
+
 .sf-arrows.sf-navbar ul .sf-with-ul:after {
   margin-top: -3px;
   margin-right: 0;
@@ -999,9 +1045,9 @@ a.btn-secondary:hover {
   border-top-color: rgba(255, 255, 255, .5);
 }
 
-.sf-arrows.sf-navbar ul > .sfHover > .sf-with-ul:after,
-.sf-arrows.sf-navbar ul > li > .sf-with-ul:focus:after,
-.sf-arrows.sf-navbar ul > li:hover > .sf-with-ul:after {
+.sf-arrows.sf-navbar ul>.sfHover>.sf-with-ul:after,
+.sf-arrows.sf-navbar ul>li>.sf-with-ul:focus:after,
+.sf-arrows.sf-navbar ul>li:hover>.sf-with-ul:after {
   border-color: transparent;
   border-top-color: white;
 }
@@ -1031,7 +1077,7 @@ a.btn-secondary:hover {
   background: #333 !important;
 }
 
-.sf-menu > li:first-child > a {
+.sf-menu>li:first-child>a {
   border-left: 0;
 }
 
@@ -1061,12 +1107,18 @@ a.btn-secondary:hover {
   -o-transition: none;
   transition: none;
 }
+
+
 /*** arrows (for all except IE7) **/
+
 .sf-arrows .sf-with-ul {
   padding-right: 2.5em;
   /* no CSS arrows for IE7 (lack pseudo-elements) */
 }
+
+
 /* styling for both css and generated arrows */
+
 .sf-arrows .sf-with-ul:after {
   position: absolute;
   top: 50%;
@@ -1082,13 +1134,16 @@ a.btn-secondary:hover {
   border-top-color: rgba(255, 255, 255, .5);
 }
 
-.sf-arrows > .sfHover > .sf-with-ul:after,
-.sf-arrows > li > .sf-with-ul:focus:after,
-.sf-arrows > li:hover > .sf-with-ul:after {
+.sf-arrows>.sfHover>.sf-with-ul:after,
+.sf-arrows>li>.sf-with-ul:focus:after,
+.sf-arrows>li:hover>.sf-with-ul:after {
   border-top-color: white;
   /* IE8 fallback colour */
 }
+
+
 /* styling for right-facing arrows */
+
 .sf-arrows ul .sf-with-ul:after {
   margin-top: -5px;
   margin-right: -3px;
@@ -1098,9 +1153,9 @@ a.btn-secondary:hover {
   border-left-color: rgba(255, 255, 255, .5);
 }
 
-.sf-arrows ul .sfHover > .sf-with-ul:after,
-.sf-arrows ul li > .sf-with-ul:focus:after,
-.sf-arrows ul li:hover > .sf-with-ul:after {
+.sf-arrows ul .sfHover>.sf-with-ul:after,
+.sf-arrows ul li>.sf-with-ul:focus:after,
+.sf-arrows ul li:hover>.sf-with-ul:after {
   border-left-color: white;
 }
 
@@ -1116,13 +1171,15 @@ a.btn-secondary:hover {
   color: #4f595f;
   border: 0;
 }
+
+
 /*** Content ***/
+
 #def-column,
 #one-column {
   display: block;
   width: 100%;
   background: #fff;
-
   & .container {
     padding-bottom: 8rem;
   }
@@ -1227,7 +1284,10 @@ strong {
 #primary a:hover img {
   opacity: 0.8;
 }
+
+
 /*** Sidebar */
+
 #secondary {
   background-color: transparent;
 }
@@ -1280,7 +1340,10 @@ h3.widget-title {
   text-align: left;
   text-transform: uppercase;
 }
+
+
 /* Secondary Columns Styles */
+
 #secondary .widget ul {
   padding: 10px;
 }
@@ -1357,7 +1420,10 @@ h3.widget-title {
 #secondary ul.menu li a:hover {
   border-left: 9px solid #cc3;
 }
+
+
 /*** Widgets ***/
+
 #widgets {
   margin-top: 40px;
 }
@@ -1485,7 +1551,10 @@ h3.widget-title {
   padding: 0 !important;
   border-bottom: none;
 }
+
+
 /*** Footer *******/
+
 #footer {
   position: relative;
   z-index: 0;
@@ -1662,8 +1731,11 @@ h3.widget-title {
   margin: 0 10px 10px 0;
   border: none;
 }
+
+
 /*** Footer Menu
 ****************************************************************/
+
 .home .footer {
   font-family: 'Open Sans', Helvetica, sans-serif;
   font-size: 14px;
@@ -1776,7 +1848,6 @@ h3.widget-title {
   text-align: left;
   color: $white;
   background: $theme-tertiary-color;
-
   & .container {
     position: relative;
     z-index: 3;
@@ -1798,7 +1869,6 @@ h3.widget-title {
 .bottom address a {
   font-size: 12px;
   line-height: 1.5;
-
   span {
     font-weight: 600;
     text-transform: uppercase;
@@ -1827,6 +1897,8 @@ h3.widget-title {
 #footer-nav li:first-child {
   border-left: none;
 }
+
+
 /************Footer Features*************************************************/
 .footer-copyright {
   position: relative;
@@ -1858,19 +1930,47 @@ h3.widget-title {
 .footer-copyright p a {
   text-decoration: underline;
 }
+
+
 /*** Social Icons
 ****************************************************************/
+
 .social-icons {
   line-height: normal;
-  display: inline-block;
+  display: flex;
   margin: 0;
   padding: 0;
   list-style: none;
   text-align: left;
 }
 
+#access .social-icons {
+  position: absolute;
+  top: 0;
+  z-index: 999;
+  height: 100%;
+}
+
+#access .social-icons li {
+  display: flex;
+  align-items: center;
+  padding-right: 0.25rem;
+}
+
+#access .social-icons li a {
+  width: 42px;
+  height: 44px;
+  text-align: center;
+  color: $white;
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+}
+
 .social-icons li {
-  display: inline-block;
+  display: flex;
   height: auto;
   margin: 0;
   padding-right: 0.75rem;
@@ -1878,11 +1978,11 @@ h3.widget-title {
 
 .social-icons li a {
   font-family: 'icomoon';
-  font-size: 20px;
+  font-size: 16px;
   line-height: 1em;
-  display: inline-block;
+  display: flex;
   margin: 0.25rem;
-  padding: 10px;
+  padding: 8px;
   color: #fff;
   border-top: 0;
   border-right: 0;
@@ -1891,7 +1991,7 @@ h3.widget-title {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
-  background: #0c739e;
+  background: $theme-accent-color;
 }
 
 header .social-icons li a {
@@ -1909,6 +2009,7 @@ header .social-icons li a {
   border-radius: 50%;
   background: transparent;
 }
+
 @media only screen and (max-width: 1280px) {
   header .social-icons li a {
     font-size: 18px;
@@ -1919,6 +2020,11 @@ header .social-icons li a:hover {
   color: #fff;
   border: 2px solid $theme-accent-color;
   background: $theme-accent-color;
+}
+
+.social-icons li a:hover {
+  color: $theme-accent-color;
+  background: $white;
 }
 
 .contact .btn {
@@ -1967,16 +2073,13 @@ header .social-icons li a:hover {
 #footer-info {
   @include social-icons {
     border: 0;
-
     & li {
       width: auto;
       margin: 0.5rem 0.25rem;
-
       a {
         font-size: 18px;
         color: $theme-tertiary-color;
         background: $white;
-
         &:hover {
           color: $white;
           background: $theme-secondary-color;
@@ -1985,13 +2088,19 @@ header .social-icons li a:hover {
     }
   }
 }
+
+
 /*** Breadcrumb Lists
 ****************************************************************/
+
 .breadcrumb-list {
   font-size: 14px;
 }
+
+
 /*** Primary Content Styles
 ****************************************************************/
+
 #primary article.post {
   margin: 0 0 15px;
 }
@@ -2028,8 +2137,11 @@ header .social-icons li a:hover {
   text-transform: uppercase;
   color: #0c739e;
 }
+
+
 /*** Blog Stylings
 ****************************************************************/
+
 #nav-single {
   padding: 0 0 30px;
 }
@@ -2080,7 +2192,7 @@ header .social-icons li a:hover {
   /* reset the width for the one-column and sidebar page layout */
 }
 
-.commentlist > li.comment {
+.commentlist>li.comment {
   position: relative;
   margin: 0 0 1.625em;
   padding: 1.625em !important;
@@ -2145,13 +2257,13 @@ header .social-icons li a:hover {
   box-shadow: 0 1px 2px #ccc;
 }
 
-.commentlist > li:before {
+.commentlist>li:before {
   position: absolute;
   left: -21px;
   content: url('img/comment-arrow.png');
 }
 
-.commentlist > li.pingback:before {
+.commentlist>li.pingback:before {
   content: '';
 }
 
@@ -2181,7 +2293,7 @@ a.comment-reply-link:hover {
   background: #888;
 }
 
-a.comment-reply-link > span {
+a.comment-reply-link>span {
   position: relative;
   top: -1px;
   display: inline-block;
@@ -2190,25 +2302,34 @@ a.comment-reply-link > span {
 .nocomments {
   display: none;
 }
+
+
 /* Post author highlighting */
-.commentlist > li.bypostauthor {
+
+.commentlist>li.bypostauthor {
   border-color: #d3d3d3;
   background: #ddd;
 }
 
-.commentlist > li.bypostauthor .comment-meta {
+.commentlist>li.bypostauthor .comment-meta {
   color: #575757;
 }
 
-.commentlist > li.bypostauthor:before {
+.commentlist>li.bypostauthor:before {
   content: url('img/comment-arrow-bypostauthor.png');
 }
+
+
 /* Post Author threaded comments */
-.commentlist .children > li.bypostauthor {
+
+.commentlist .children>li.bypostauthor {
   border-color: #d3d3d3;
   background: #ddd;
 }
+
+
 /* Comment Form */
+
 #respond {
   position: relative;
   overflow: hidden;
@@ -2360,7 +2481,10 @@ p.comment-form-comment {
 h1.page-title-cat {
   font-size: 30px !important;
 }
+
+
 /* ---------- Extended  ---------- */
+
 .rpwe-block li {
   margin: 0 0 15px;
 }
@@ -2406,8 +2530,11 @@ h1.page-title-cat {
 .rpwe-clearfix {
   zoom: 1;
 }
+
+
 /*** Search Form
 ****************************************************************/
+
 #searchform {
   float: right;
   margin: 15px 0;
@@ -2462,8 +2589,11 @@ h1.page-title-cat {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
+
 /*** Slideshow
 ****************************************************************/
+
 #slideshow {
   position: relative;
 }
@@ -2472,8 +2602,11 @@ h1.page-title-cat {
   border: 0 !important;
   background: transparent !important;
 }
+
+
 /*** Sidebar Contact Form
 ****************************************************************/
+
 #sidebar-contact-form input[type='text'],
 #sidebar-contact-form textarea {
   width: 325px;
@@ -2564,7 +2697,6 @@ div.wpcf7-validation-errors {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-
   &:hover {
     border-color: $theme-accent-color;
     background: $theme-accent-color !important;
@@ -2627,19 +2759,25 @@ div.wpcf7-validation-errors {
   padding: 0;
   text-align: center;
 }
+
+
 /****************************************************************/
+
+
 /*** Slider Support ***/
+
+
 /****************************************************************/
+
 .bx-slider,
 .bx-slider li,
 .bx-wrapper,
 .home .slider {
-  height: 825px;
+  height: 700px;
   @media only screen and (max-width: $lg) {
     height: 600px;
   }
-
-  @media only screen and (max-width: $md) {
+  @media only screen and (max-width: $sm) {
     height: 400px;
   }
 }
@@ -2656,21 +2794,20 @@ div.wpcf7-validation-errors {
   background: #fff;
   background-position: center top;
   background-size: cover;
-  @media screen and (max-width: $sm ) {
+  @media screen and (max-width: $xs) {
     &::after {
       position: absolute;
       z-index: 990;
       top: 0;
       left: 0;
-      display: none !important;
       width: 100%;
       height: 100%;
       content: '';
-      background-color: rgba($white, .6);
+      background-color: rgba($white, .7);
     }
   }
   @media only screen and (max-width: $xs) {
-    background: #fff url('img/slider/slider1.jpg') no-repeat 64% center;
+    background: #fff url('img/slider/slider2.jpg') no-repeat 64% center;
     background-size: cover;
   }
 }
@@ -2736,23 +2873,20 @@ div.wpcf7-validation-errors {
 
 .slider .boxed {
   nav {
-    @media screen and (max-width: $xs ) {
+    @media screen and (max-width: $xs) {
       display: none;
     }
     ul {
       display: flex;
       justify-content: space-evenly;
-
       li {
         display: flex;
         flex: 1 1;
         justify-content: center;
         border-right: 2px solid #fff;
-
         &:last-child {
           border: 0;
         }
-
         a {
           font-family: $font-primary;
           font-size: 24px;
@@ -2763,7 +2897,6 @@ div.wpcf7-validation-errors {
           text-transform: uppercase;
           color: #fff;
           text-shadow: 0 2px 3px rgba(#000, .5);
-
           &:hover {
             transform: scale(1.3);
             text-shadow: 0 8px 12px rgba(#000, .5);
@@ -2773,7 +2906,10 @@ div.wpcf7-validation-errors {
     }
   }
 }
+
+
 /*** Inside Page Styling ***/
+
 .bg-container {
   position: relative;
   z-index: 0;
@@ -2789,7 +2925,7 @@ div.wpcf7-validation-errors {
   position: relative;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,.45);
+  background: rgba(0, 0, 0, .45);
 }
 
 .bg-container .entry-title {
@@ -2798,7 +2934,10 @@ div.wpcf7-validation-errors {
   letter-spacing: 0.5rem;
   color: $white;
 }
+
+
 /*** Headroom ***/
+
 .headroom {
   -webkit-transition: -webkit-transform 200ms linear;
   -o-transition: transform 200ms linear;
@@ -2819,8 +2958,13 @@ div.wpcf7-validation-errors {
   -ms-transform: translateY(-100%);
   transform: translateY(-100%);
 }
+
+
 /*** OVERRIDES ***/
+
+
 /****************************************************************/
+
 .g-recaptcha {
   float: left;
   width: 100%;

@@ -29,14 +29,14 @@
 
 // START Editing Project Variables.
 // Project related.
-var project                 = 'desertdental'; // Project Name.
+var project                 = 'drqtattoo'; // Project Name.
 var projectURL              = 'localhost:8888/ctm/'; // Project URL. Could be something like localhost:8888.
 var productURL              = './'; // Theme/Plugin URL. Leave it like it is, since our gulpfile.js lives in the root folder.
 
 // Translation related.
-var text_domain             = 'desertdental'; // Your textdomain here.
-var destFile                = 'desertdental.pot'; // Name of the transalation file.
-var packageName             = 'v'; // Package name.
+var text_domain             = project; // Your textdomain here.
+var destFile                = project + '.pot'; // Name of the transalation file.
+var packageName             = project; // Package name.
 var bugReport               = 'https://creativetakemedical.com'; // Where can users report bugs.
 var lastTranslator          = 'S. Quinn <shawn@creativetakeweb.com>'; // Last translator Email ID.
 var team                    = 'CTM <shawn@creativetakeweb.com>'; // Team's Email ID.
@@ -141,7 +141,7 @@ gulp.task( 'bs', function() {
 
     // `true` Automatically open the browser with BrowserSync live server.
     // `false` Stop the browser from automatically opening.
-    open: true,
+    open: false,
 
     // Inject CSS changes.
     // Comment it to reload browser for every CSS change.
@@ -317,12 +317,12 @@ gulp.task( 'bs', function() {
 // Copies the files to the /dist folder for distributon as simple theme
 gulp.task('dist', ['clean-dist'], function() {
     gulp.src(['**/*','!bower_components','!bower_components/**','!node_modules','!node_modules/**','!src','!src/**','!dist','!dist/**','!dist-product','!dist-product/**','!sass','!sass/**','!readme.txt','!readme.md','!package-lock.json','!package.json','!gulpfile.js','!CHANGELOG.md','!.travis.yml','!jshintignore', '!codesniffer.ruleset.xml', '*', '!desertdental' ])
-    .pipe(gulp.dest('desertdental/'))
+    .pipe(gulp.dest(project + '/'))
 });
 
 // Deleting any file inside the /src folder
 gulp.task('clean-dist', function () {
-  return del(['desertdental/**/*',]);
+  return del([project + '/**/*',]);
 });
 
 // Deleting any file inside the /src folder

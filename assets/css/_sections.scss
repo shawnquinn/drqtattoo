@@ -17,35 +17,35 @@
 /* SECTIONS ** */
 /* Call to Actions ** */
 section.call-to-actions {
-  background: $theme-quaternary-color;
-
+  background: rgba($white, 0.2);
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  width: 100%;
+  z-index: 999;
   .container {
     color: $white;
-    background: $theme-tertiary-color;
-
-    a,
+    #info {
+      background: rgba($theme-main-color, 0.7);
+    }
     p {
       margin: 0;
       text-transform: uppercase;
     }
+  }
 
-    a {
-      color: #caecff;
-
-      &:hover {
-        text-decoration: underline;
-      }
+  .contacts a {
+    color: $white;
+    &:hover {
+      color: $theme-accent-color;
     }
   }
 
   .icon {
-    @media screen and (max-width: $sm) {
-      padding: 0 3rem 0 4rem;
-    }
-    @media screen and (max-width: $xs) {
-      padding: 0 2rem;
-    }
+    background-color: $theme-accent-color;
+    font-size: 13px;
   }
+  
 }
 
 /* Home Section ** */
@@ -66,12 +66,12 @@ section.home-content .container-fluid {
 section.home-content #primary h1 {
   font-family: $font-primary;
   font-size: 48px;
-  font-weight: 300;
-  line-height: 1.5;
+  font-weight: 400;
+  line-height: 1;
   position: relative;
   display: block;
   margin: 0 auto 1rem;
-  padding-bottom: 0 0 1rem 0;
+  padding: 0 0 1rem 0;
   text-align: left;
   letter-spacing: 0;
   text-transform: uppercase;
@@ -97,13 +97,12 @@ section.home-content #primary h1 {
 .featured-title span,
 section.home-content #primary h1 span.sub {
   font-family: $font-primary;
-  font-size: 24px;
+  font-size: 32px;
   display: block;
-  padding-top: 1rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  padding-top: 0;
+  padding-left: 1rem;
+  text-transform: none;
   color: $theme-secondary-color;
-  border-top: 1px solid $theme-secondary-color;
   @media (max-width: $lg) {
     font-size: 24px;
   }

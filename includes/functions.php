@@ -40,19 +40,19 @@ function ctw_enqueue_scripts_and_styles() {
 
 	$ctw_registered_styles = array(
 		'bootstrap-css'			=> get_template_directory_uri().'/assets/css/bootstrap/css/bootstrap.min.css',
-		'animate'						=> get_template_directory_uri().'/assets/css/animate.css',
+		'animate'				=> get_template_directory_uri().'/assets/css/animate.css',
 		'font-awesome'			=> get_template_directory_uri().'/assets/css/font-awesome.min.css',
-		'slicknav'					=> get_template_directory_uri().'/assets/css/slicknav.min.css',
-		'style-sheet'				=> get_template_directory_uri().'/style.min.css',
-		//'dev-style-sheet'	=> get_template_directory_uri().'/style.css'
+		'slicknav'				=> get_template_directory_uri().'/assets/css/slicknav.min.css',
+		//'style-sheet'			=> get_template_directory_uri().'/style.min.css',
+		'dev-style-sheet'		=> get_template_directory_uri().'/style.css'
 	);
 
 	$ctw_registered_scripts = array(
-		'popper-js'		=>	'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js',
-		'bootstrap-js'		=>	get_template_directory_uri().'/assets/css/bootstrap/js/bootstrap.min.js',
-		// 'fastclick' 		=>	get_template_directory_uri().'/js/fastclick.js',
-		// 'superfish' 		=>	get_template_directory_uri().'/js/superfish.js',
-		// 'supersubs' 		=>	get_template_directory_uri().'/js/supersubs.js',
+		'popper-js'				=>	'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js',
+		'bootstrap-js'			=>	get_template_directory_uri().'/assets/css/bootstrap/js/bootstrap.min.js',
+		// 'fastclick' 			=>	get_template_directory_uri().'/js/fastclick.js',
+		// 'superfish' 			=>	get_template_directory_uri().'/js/superfish.js',
+		// 'supersubs' 			=>	get_template_directory_uri().'/js/supersubs.js',
 		// 'slicknav'			=>	get_template_directory_uri().'/js/jquery.slicknav.min.js',
 		// 'waypoints'		 	=>	get_template_directory_uri().'/js/jquery.waypoints.min.js',
 		// 'waypints-sticky' 	=>	get_template_directory_uri().'/js/sticky.min.js',
@@ -60,9 +60,9 @@ function ctw_enqueue_scripts_and_styles() {
 		// 'headroom-jquery'	=>	get_template_directory_uri().'/js/jQuery.headroom.js',
 		// 'bx-sliderjs' 		=>	get_template_directory_uri().'/js/jquery.bxslider.min.js',
 		'vendors'		 		=>	get_template_directory_uri().'/assets/js/vendors.js',
-		'tweenMax'			=> 'http://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js',
-		'scrollMagic'		=> 'http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js',
-		'AnimationGSAP' => 'http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js',
+		'tweenMax'				=> 'http://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js',
+		'scrollMagic'			=> 'http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js',
+		'AnimationGSAP' 		=> 'http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js',
 		'custom'		 		=>	get_template_directory_uri().'/assets/js/custom.js'
 	);
 

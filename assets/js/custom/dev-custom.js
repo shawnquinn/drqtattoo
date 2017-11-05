@@ -1,90 +1,36 @@
 var wow = new WOW(
-  {
-    boxClass:     'wow',      // animated element css class (default is wow)
-    animateClass: 'animated', // animation css class (default is animated)
-    offset:       0,          // distance to the element when triggering the animation (default is 0)
-    mobile:       false,       // trigger animations on mobile devices (default is true)
-    live:         true,       // act on asynchronously loaded content (default is true)
-    callback:     function(box) {
-      // the callback is fired every time an animation is started
-      // the argument that is passed in is the DOM node being animated
+	{
+		boxClass:     'wow',      // animated element css class (default is wow)
+		animateClass: 'animated', // animation css class (default is animated)
+		offset:       0,          // distance to the element when triggering the animation (default is 0)
+		mobile:       false,       // trigger animations on mobile devices (default is true)
+		live:         true,       // act on asynchronously loaded content (default is true)
+		callback:     function(box) {
+		// the callback is fired every time an animation is started
+		// the argument that is passed in is the DOM node being animated
+		}
+	}
+	);
+	wow.init();
+
+	// Stickky Nav
+	var nav = document.querySelector('#nav-menu');
+    var topOfNav = nav.offsetTop;
+
+    function fixNav() {
+      if(window.scrollY >= topOfNav) {
+        //document.body.style.paddingTop = nav.offsetHeight + 'px';
+        document.body.classList.add('fixed-nav');
+      } else {
+		//document.body.style.paddingTop = 0;
+        document.body.classList.remove('fixed-nav');
+      }
     }
-  }
-);
-wow.init();
+	window.addEventListener('scroll', fixNav);
+	
 
 //Begin jQuery
 jQuery(function($) {
-		/****************************************************************/
-		/*** //Init Headroom ***/
-		/****************************************************************/
-		var $head = $("#header-info").height();
-		$(".sticky-container").headroom({
-			// vertical offset in px before element is first unpinned
-			offset : $head,
-			tolerance : 1
-		});
-
-		/****************************************************************/
-		/*** //Call Sticky Menu Waypoints ***/
-		/****************************************************************/
-		var sticky = new Waypoint.Sticky({
-			element: $('.sticky')[0],
-			offset: -$head // Apply "stuck" when element 30px from top
-		});
-
-
-		/****************************************************************/
-		/*** Mousover ***/
-		/****************************************************************/
-		// Slider Menu Homepage
-		$('.columned').hover(
-		    function() {
-		        // Called when the mouse enters the element
-						$(this).children('h3').fadeOut(400);
-						$(this).children('.procedure-menu').fadeIn(400);
-		    },
-		    function() {
-		        // Called when the mouse leaves the element
-						$(this).children('h3').fadeIn(400);
-						$(this).children('.procedure-menu').fadeOut(400);
-		    }
- 		);
-
-
- 		var $rM = $('#rancho, #rancho-box');
- 		// Contact Footer
- 		$rM.hover(
-		    function() {
-		        // Called when the mouse enters the element
-				$rM.addClass("hovered");
-				setTimeout(function(){
-			       $("#rancho-box .box-title h4").addClass("l-space");
-			   }, 100);
-		    },
-		    function() {
-		        // Called when the mouse leaves the element
-				$rM.removeClass("hovered");
-				$("#rancho-box .box-title h4").removeClass("l-space");
-		    }
- 		);
-
- 		var $bH = $('#bevhills, #bev-box');
- 		// Contact Footer
- 		$bH.hover(
-		    function() {
-		        // Called when the mouse enters the element
-				$bH.addClass("hovered");
-				setTimeout(function(){
-			       $("#bev-box .box-title h4").addClass("l-space");
-			   }, 100);
-		    },
-		    function() {
-		        // Called when the mouse leaves the element
-				$bH.removeClass("hovered");
-				$("#bev-box .box-title h4").removeClass("l-space");
-		    }
- 		);
 
 		/****************************************************************/
 		/*** ScrollMagic Init ***/
@@ -147,7 +93,7 @@ jQuery(function($) {
 			maxWidth: 22,
 			// maximum width of sub-menus in em units
 			extraWidth: 1 // extra width can ensure lines don't sometimes turn over
-		})
+		});
 		$('ul.sf-menu').superfish(); // call supersubs first, then superfish
 
 
@@ -182,25 +128,6 @@ jQuery(function($) {
 			event.preventDefault ? event.preventDefault() : event.returnValue = false;
 			$('.float-box').toggleClass('hidden-reveal');
 		});
-
-
-		/****************************************************************/
-		/*** //Toggle States ***/
-		/****************************************************************/
-		$('.menu-widget ul.sub-menu').hide(); //Hide children by default
-		$('.menu-widget li a').click(function(event) {
-			event.preventDefault ? event.preventDefault() : event.returnValue = false;
-			$(this).siblings('ul.sub-menu').slideToggle(200);
-		});
-		$('.menu-widget li a').click(function(event) {
-			event.preventDefault ? event.preventDefault() : event.returnValue = false;
-			$(this).toggleClass('arrow-down');
-		});
-		$('.menu-widget li li a').click(function() {
-			$(this).removeClass('arrow-down');
-			window.location.href = $(this).attr('href');
-		});
-
 
 		/****************************************************************/
 		/*** //BX Slider Main ***/
