@@ -128,39 +128,110 @@ $empty = ( empty( $lumos_options['home_headline'] ) && empty( $lumos_options['ho
           <?php get_template_part( 'post-data' ); ?>
           <?php lumos_entry_bottom(); ?>
         </div>
-        <!-- end of #post--->
+        <!-- end of #post -->
         <?php
-  		endwhile;
-  		get_template_part( 'loop-nav' );
-  		else :
-  		get_template_part( 'loop-no-posts' );
-  		endif;
-  		?>
+          endwhile;
+          get_template_part( 'loop-nav' );
+          else :
+          get_template_part( 'loop-no-posts' );
+          endif;
+          ?>
       </div>
       <!-- end of #content -->
-    </div>
-    <!-- end of primary -->
-    </div>
-  </div>
-<!-- .container -->
+    </div><!-- end of primary -->
+    </div><!-- row -->
+
+    <div class="row align-items-center wow fadeInUp" data-wow-duration="1.75s" data-wow-offset="100">
+      <div class="col-md-6 my-4 order-2 order-md-1">
+        <img class="img-fluid d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/pico.jpg" alt="<?php bloginfo() ?>" />
+      </div>   
+      <div class="col-md-6 my-4 order-1 order-md-2">
+        <h2 class="featured-title">Picoway Resolve <span class="sub">State of the Art Tattoo Removal Technology</span></h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis commodo sem et vehicula. Ut molestie placerat fermentum. Vestibulum nec sapien dui. Vestibulum feugiat purus a arcu pulvinar, eu elementum nibh elementum.</p>
+        <p>Sed fringilla diam porta orci consectetur, eu egestas felis pulvinar. Sed blandit mollis tortor, quis tincidunt dolor fermentum sit amet. Aliquam nulla ex, tempus ut lacinia vitae, mattis vel nisi. In erat nunc, hendrerit sed sollicitudin nec, sagittis ac dui.</p>
+
+          <div class="row">
+            <div class="col-md-6">
+            <?php echo do_shortcode( '[button link="#" class="btn-block"]Learn More[/button]' ) ?>
+            </div>
+          </div>
+      </div>   
+    </div><!-- row -->
+  </div><!-- .container -->
 </section>
 <!-- section.home-content -->
 
+<section id="services" class="services">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4 wow fadeInUp" data-wow-offset="250">
+        <a href="<?php echo esc_url( home_url('') ) ?>">
+          <div class="square">
+            <div class="square-inn">
+              <h3>Moh’s/Surgical <br/>Screening</h3>
+            </div>
+            <div class="box">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-angle-right fa-stack-1x"></i>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div> 
+      
+      <div class="col-sm-4 wow fadeInUp" data-wow-offset="250">
+        <a href="<?php echo esc_url( home_url('') ) ?>">
+          <div class="square">
+            <div class="square-inn">
+              <h3>Medical <br/>Screening</h3>
+            </div>
+            <div class="box">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-angle-right fa-stack-1x"></i>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div> 
+
+      <div class="col-sm-4 wow fadeInUp" data-wow-offset="250">
+        <a href="<?php echo esc_url( home_url('') ) ?>">
+          <div class="square">
+            <div class="square-inn">
+              <h3>Skin Cancer <br/>Screening</h3>
+            </div>
+            <div class="box">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-angle-right fa-stack-1x"></i>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div> 
+    </div>
+  </div>
+</section>
+
 <section class="meet">
 	<div class="container">
-      <div class="row">
+      <div class="row align-items-center">
+            
             <div class="col-md-6 wow fadeInLeft" data-wow-duration="1.75s" data-wow-offset="250">
-                <img class="img-fluid d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/docs.png" alt="Dr. Shteynberg" />
-            </div>
-            <div class="col-md-6 wow fadeInRight" data-wow-duration="1.75s" data-wow-offset="250">
-              <h2 class="featured-title text-center text-md-left">Meet Our Surgeons<span>at Desert Oral Surgery</span></h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin maximus facilisis ligula eu blandit. Aenean aliquam lacus eget viverra iaculis. Proin facilisis auctor ex, sit amet pulvinar sapien vehicula at. Mauris scelerisque ut mauris cursus cursus. Nam auctor pharetra erat vitae consequat. Aliquam in congue metus, et scelerisque velit.</p>
+              <h2 class="featured-title text-center text-md-left">Meet Dr. Q <span>Suzanne M. Quardt, M.D.</span></h2>
+              <p>Phasellus vel auctor odio, vitae aliquam massa. Suspendisse vestibulum varius ligula, quis hendrerit dolor auctor a. Integer vel lobortis sem, at condimentum dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis tempor pretium. Lorem ipsum dolor sit amet.  Phasellus vel auctor odio, vitae aliquam massa. Suspendisse vestibulum varius ligula, quis hendrerit dolor auctor a. Integer vel lobortis sem, at condimentum dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis tempor pretium. Lorem ipsum dolor sit amet.</p>
               <div class="row">
                 <div class="col-md-6">
-                  <button class="btn btn-lg btn-secondary btn-block" href="<?php echo home_url(); ?>">Read More</button>
+                  <button class="btn btn-lg btn-primary btn-block" href="<?php echo home_url(); ?>">Read More</button>
                 </div>
               </div>
-      			</div><!-- col -->
+            </div><!-- col -->
+            
+            <div class="col-md-6 wow fadeInRight" data-wow-duration="1.75s" data-wow-offset="250">
+                <img class="img-fluid d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/dr-quardt.jpg" alt="Dr. Quardt" />
+            </div>
 		  </div><!-- row -->
 	</div><!-- .container -->
 </section><!-- section -->
@@ -168,29 +239,54 @@ $empty = ( empty( $lumos_options['home_headline'] ) && empty( $lumos_options['ho
 <section class="cta-boxes">
   <div class="container">
     <div class="row">
-      <div class="col-sm-6 col-md-4 mb-4 wow fadeInLeftBig" data-wow-duration="1.75s" data-wow-offset="125" data-wow-delay="0.25s">
+      <div class="col-sm-6 col-md-4 mb-4 wow fadeInLeft" data-wow-duration="1.75s" data-wow-offset="125">
         <a href="<?php echo esc_url( home_url('') ) ?>">
           <div class="box">
             <img class="img-fluid d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/services/s-1.jpg" alt="<?php echo esc_html_e('', 'understrap') ?>">
-            <h4>Procedures</h4>
+
+            <div class="holder d-flex">
+              <h4>Photo Gallery</h4>
+              <div class="box">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                  <i class="fa fa-angle-right fa-stack-1x"></i>
+                </span>
+              </div>
+            </div>
           </div>
         </a>
       </div>
 
-      <div class="col-sm-6 col-md-4 mb-4 wow fadeInLeftBig" data-wow-duration="1.75s" data-wow-offset="175" data-wow-delay="0.5s">
+      <div class="col-sm-6 col-md-4 mb-4 wow fadeIn" data-wow-duration="1.75s" data-wow-offset="175">
         <a href="<?php echo esc_url( home_url('') ) ?>">
           <div class="box">
             <img class="img-fluid d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/services/s-2.jpg" alt="<?php echo esc_html_e('', 'understrap') ?>">
-            <h4>Why Desert Oral</h4>
+            <div class="holder d-flex">
+              <h4>Patient Reviews</h4>
+              <div class="box">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                  <i class="fa fa-angle-right fa-stack-1x"></i>
+                </span>
+              </div>
+            </div>
           </div>
         </a>
       </div>
 
-      <div class="col-sm-6 mx-sm-auto col-md-4 mb-4 wow fadeInLeftBig" data-wow-duration="1.75s" data-wow-offset="175" data-wow-delay="0.75s">
+      <div class="col-sm-6 mx-sm-auto col-md-4 mb-4 wow fadeInRight" data-wow-duration="1.75s" data-wow-offset="175">
         <a href="<?php echo esc_url( home_url('') ) ?>">
           <div class="box">
             <img class="img-fluid d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/services/s-3.jpg" alt="<?php echo esc_html_e('', 'understrap') ?>">
-            <h4>Patient Registration</h4>
+            <div class="holder d-flex">
+              <h4>Contact Us</h4>
+              <div class="box">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                  <i class="fa fa-angle-right fa-stack-1x"></i>
+                </span>
+              </div>
+            </div>
           </div>
         </a>
       </div>
@@ -198,7 +294,7 @@ $empty = ( empty( $lumos_options['home_headline'] ) && empty( $lumos_options['ho
   </div>
 </section>
 
-<section class="review">
+<section class="review" hidden>
 	<div class="container wow fadeIn" data-wow-duration="2s" data-wow-offset="175">
     <div class="row">
       <div class="col-12">

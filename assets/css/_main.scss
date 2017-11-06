@@ -480,7 +480,7 @@ a.btn-secondary {
   margin: 1rem 0 2rem;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   white-space: normal;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -535,7 +535,7 @@ a.btn-secondary:hover {
   color: $white;
   border: 1px solid $theme-secondary-color;
   background: $theme-secondary-color;
-  box-shadow: 0 4px 8px rgba(#333, .5);
+  box-shadow: 0 4px 12px rgba(#333, .5);
 }
 
 .btn:hover {
@@ -858,7 +858,7 @@ a.btn-secondary:hover {
   /* For browsers that do not support gradients */
   display: block;
   width: 100%;
-  background: rgba($theme-main-color, .9);
+  background-color: rgba($theme-main-color, .9);
 }
 
 #access,
@@ -925,7 +925,7 @@ a.btn-secondary:hover {
   text-decoration: none;
   color: #fff !important;
   border-bottom: 0;
-  background-color: desaturate(lighten($theme-main-color, 20%), 25%);
+  background-color: desaturate(lighten($theme-main-color, 20%), 25%) !important;
 }
 
 #access #searchform {
@@ -1098,17 +1098,6 @@ a.btn-secondary:hover {
   border: 0 !important;
   background: $theme-accent-color !important;
 }
-
-.sf-menu li.sfHover,
-.sf-menu li.sfHover a,
-.sf-menu li:hover,
-.sf-menu li:hover a {
-  /* only transition out, not in */
-  -webkit-transition: none;
-  -o-transition: none;
-  transition: none;
-}
-
 
 /*** arrows (for all except IE7) **/
 
