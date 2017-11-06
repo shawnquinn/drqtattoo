@@ -195,7 +195,7 @@ gulp.task( 'bs', function() {
 
     .pipe( rename( { suffix: '.min' } ) )
     .pipe( minifycss( {
-      maxLineLen: 10
+      maxLineLen: 0
     }))
     .pipe( lineec() ) // Consistent Line Endings for non UNIX systems.
     .pipe( gulp.dest( styleDestination ) )
@@ -316,7 +316,7 @@ gulp.task( 'bs', function() {
 // gulp dist
 // Copies the files to the /dist folder for distributon as simple theme
 gulp.task('dist', ['clean-dist'], function() {
-    gulp.src(['**/*','!bower_components','!bower_components/**','!node_modules','!node_modules/**','!src','!src/**','!dist','!dist/**','!dist-product','!dist-product/**','!sass','!sass/**','!readme.txt','!readme.md','!package-lock.json','!package.json','!gulpfile.js','!CHANGELOG.md','!.travis.yml','!jshintignore', '!codesniffer.ruleset.xml', '*', '!desertdental' ])
+    gulp.src(['**/*','!bower_components','!bower_components/**','!node_modules','!node_modules/**','!src','!src/**','!dist','!dist/**','!dist-product','!dist-product/**','!sass','!sass/**','!readme.txt','!readme.md','!package-lock.json','!package.json','!gulpfile.js','!CHANGELOG.md','!.travis.yml','!jshintignore', '!codesniffer.ruleset.xml', '*', '!'+project ])
     .pipe(gulp.dest(project + '/'))
 });
 

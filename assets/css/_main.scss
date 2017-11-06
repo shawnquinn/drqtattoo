@@ -2575,13 +2575,6 @@ h1.page-title-cat {
   border: 1px solid #ebebeb;
 }
 
-#searchform input[type='text']:focus {
-  border: 1px solid rgba(103, 0, 0, .5);
-  -webkit-box-shadow: 0 0 2px rgba(103, 0, 0, .5);
-  -moz-box-shadow: 0 0 2px rgba(103, 0, 0, .5);
-  box-shadow: 0 0 2px rgba(103, 0, 0, .5);
-}
-
 #searchform button[type='submit'] {
   position: absolute;
   right: 5px;
@@ -2710,17 +2703,17 @@ div.wpcf7-validation-errors {
 #secondary .widget .wpcf7 input[type='submit'],
 .widget .wpcf7 input[type='submit'] {
   padding: 1.25em 0;
-  border-color: $theme-main-color;
+  border-color: $theme-accent-color;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
-  background: $theme-main-color;
+  background: $theme-accent-color;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
   &:hover {
-    border-color: $theme-accent-color;
-    background: $theme-accent-color !important;
+    border-color: $theme-main-color;
+    background: $theme-main-color !important;
   }
 }
 
