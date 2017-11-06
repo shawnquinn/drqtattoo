@@ -237,6 +237,12 @@ section.meet {
       font-size: 24px;
       text-transform: uppercase;
       margin: 2rem 0 0 0;
+      @media screen and (max-width: $md) {
+        font-size: 18px;
+      }
+    }
+    @media screen and (max-width: $md) {
+      font-size: 42px;
     }
   }
 
@@ -383,137 +389,52 @@ section.review .bx-wrapper {
 }
 /* Contact ** */
 section.contact {
-  padding: 0;
+  position: relative;
+  .container {
+    position: relative;
+    z-index: 3;
+  }
+  padding: 6rem 0;
+  background: url(img/bg-contact.jpg) no-repeat center center;
+  background-attachment: scroll;
+  background-size: cover;
+  h3 {
+    color: $black;
+  }
 
   & .contact-info {
     position: relative;
     z-index: 3;
-    margin-top: -4rem;
-    margin-bottom: -4rem;
     padding: 4rem 2rem;
     background: $theme-secondary-color;
     @media screen and (max-width: $sm ) {
       margin: 0;
     }
   }
+
+  @media screen and (max-width: $sm) {
+    &::before {
+      content:'';
+      position: absolute;
+      z-index: 2;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      background: rgba($white, 0.7);
+    }
+  }  
 }
 
-.contact-info {
-  h3,
-  h4 {
-    letter-spacing: 5px;
-    color: $white;
-  }
-
-  h3 {
-    font-size: 54px;
-    font-weight: 400;
-    @media screen and (max-width: $lg ) {
-      font-size: 36px;
-    }
-
-    @media screen and (max-width: $md ) {
-      font-size: 24px;
-    }
-  }
-
-  h4 {
-    font-size: 36px;
-    font-weight: 300;
-    @media screen and (max-width: $lg ) {
-      font-size: 24px;
-    }
-
-    @media screen and (max-width: $md ) {
-      font-size: 18px;
-    }
+section.contact address,
+section.contact address a {
+  font-size: 21px;
+  color: $black;
+  transition: all 0.2s ease;
+  @media screen and (max-width: $md) {
+    font-size: 16px;
   }
 }
 
-.contact-info {
-  .social-icons {
-    display: block;
-
-    a {
-      transition: all 0.2s ease;
-      color: $white;
-      border: 1px solid $white;
-      border-radius: 50px;
-      background: transparent;
-
-      &:hover {
-        color: $theme-secondary-color;
-        border: 1px solid $theme-secondary-color;
-        background: $white;
-      }
-    }
-  }
-}
-
-.contact-info {
-  .btn {
-    color: $white;
-    border: 1px solid $white;
-    background: transparent;
-
-    &:hover {
-      color: $theme-secondary-color;
-      border: 1px solid $white;
-      background: $white;
-    }
-  }
-}
-
-section.contact .contact-info p,
-section.contact .contact-info p a {
-  font-family: $font-primary;
-  font-size: 30px;
-  font-weight: 300;
-  text-transform: uppercase;
-}
-
-section.contact .contact-info address {
-  font-family: $font-secondary;
-  font-size: 18px;
-  font-weight: 300;
-  margin: 1rem 0 2rem;
-  letter-spacing: 1px;
-  color: $white;
-
-  & span {
-    font-weight: 600;
-
-    &.location {
-      text-transform: uppercase;
-    }
-
-    &.phone {
-      font-size: 42px;
-      @media screen and (max-width: $lg ) {
-        font-size: 24px;
-      }
-
-      @media screen and (max-width: $md ) {
-        font-size: 18px;
-      }
-
-      a {
-        color: $white;
-        transition: all 0.2s ease-in-out;
-        display: block;
-        &:hover {
-          text-decoration: none;
-          transform: scale(1.1);
-          text-shadow: 0px 6px 12px rgba(#000, 0.4)
-        }
-      }
-    }
-  }
-  @media screen and (max-width: $lg ) {
-    font-size: 18px;
-  }
-}
-
-section.logos {
-  padding: 8rem 0 4rem;
+section.contact address a:hover {
+  color: $theme-secondary-color;
 }

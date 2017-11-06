@@ -39,8 +39,8 @@ $lumos_options = lumos_get_options();
 <?php if ( !is_front_page() ) : ?>
   <div id="header-info" class="container">
     <div class="row align-items-center">
-      <div class="col-md-4">
-        <div id="logo" >
+      <div class="col-md-4 my-4 my-md-0">
+        <div id="logo">
             <h1>
               <a href="<?php echo home_url('/'); ?>">
                 <img class="img-fluid d-block mx-auto" src="<?php header_image(); ?>" width="<?php if (function_exists('get_custom_header')) {
@@ -57,22 +57,16 @@ $lumos_options = lumos_get_options();
           </div><!-- end of #logo -->
       </div>
 
-      <div class="col-md-8">
+      <div class="col-md-8 d-none d-md-block">
         <div id="info-contact" class="row align-items-center">
-          <div class="col-md-6 col-lg-4 text-center text-md-right">
-            <p>Schedule a Consultation: </p>
+          <div class="col-lg-7 text-center">
+            <p>Schedule a Consultation: 760.324.2620</p>
           </div>
 
-          <div class="col-md-6 col-lg-4 text-center">
-            <p>
-              Palm Springs 760.327.1509<br />
-              Palm Desert 760.346.7431
-            </p>
-          </div>
 
-          <div class="col-md-12 col-lg-4 text-center">
+          <div class="col-lg-5 text-center">
             <?php
-  					echo '<ul class="social-icons text-center py-3 mb-3">';
+  					echo '<ul class="social-icons justify-content-center justify-content-lg-start py-3 mb-3">';
   					if (!empty($lumos_options['facebook_uid'])) 		echo '<li><a target="_blank" class="icon-facebook" href="' . $lumos_options['facebook_uid'] . '">'.'</a></li>';
   					if (!empty($lumos_options['twitter_uid'])) 			echo '<li><a target="_blank" class="icon-twitter" href="' . $lumos_options['twitter_uid'] . '">'.'</a></li>';
   					if (!empty($lumos_options['google_plus_uid'])) 	echo '<li><a target="_blank" class="icon-google-plus" href="' . $lumos_options['google_plus_uid'] . '">'.'</a></li>';
@@ -86,42 +80,43 @@ $lumos_options = lumos_get_options();
   					?>
           </div>
         </div>
-
-        <div class="sticky-container sticky">
-          <div class="container-fluid">
-            <div class="row align-items-center">
-              <div class="col-lg-12">
-                <div id="main-nav" class="row">
-                  <div class="col-12 p-0">
-                    <nav id="access">
-                        <ul class="mobile-nav d-md-none">
-                          <li>
-                            <a href="<?php echo home_url('/contact/'); ?>">
-                              <i class="fa fa-envelope" aria-hidden="true">
-                              </i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="tel:+1-">
-                              <i class="fa fa-phone" aria-hidden="true">
-                              </i>
-                            </a>
-                          </li>
-                        </ul>
-                        <?php wp_nav_menu(array( 'theme_location' => 'header-nav','menu_class' => 'sf-menu menu-slick')); ?>
-                      </nav><!-- nav#access -->
-                  </div><!-- col -->
-                </div><!-- row -->
-              </div><!-- col -->
-            </div><!-- row -->
-          </div><!-- container-fluid -->
-        </div><!-- sticky-container -->
       </div><!-- column -->
+    </div><!-- row -->
+  </div><!-- #header-info .container-->
+  <div id="nav-menu" class="container-fluid">
+    <div class="row">
+      <nav id="access">
+
+      <?php
+            echo '<ul class="social-icons d-md-none d-flex justify-content-start">';
+            if (!empty($lumos_options['facebook_uid'])) 		echo '<li><a target="_blank" class="icon-facebook" href="' . $lumos_options['facebook_uid'] . '">'.'</a></li>';
+            if (!empty($lumos_options['twitter_uid'])) 			echo '<li><a target="_blank" class="icon-twitter" href="' . $lumos_options['twitter_uid'] . '">'.'</a></li>';
+            if (!empty($lumos_options['google_plus_uid'])) 	echo '<li><a target="_blank" class="icon-google-plus" href="' . $lumos_options['google_plus_uid'] . '">'.'</a></li>';
+            if (!empty($lumos_options['youtube_uid'])) 			echo '<li><a target="_blank" class="icon-youtube" href="' . $lumos_options['youtube_uid'] . '">'.'</a></li>';
+            if (!empty($lumos_options['linkedin_uid'])) 		echo '<li><a target="_blank" class="icon-linkedin" href="' . $lumos_options['linkedin_uid'] . '">'.'</a></li>';
+            if (!empty($lumos_options['yelp_uid'])) 				echo '<li><a target="_blank" class="icon-yelp" href="' . $lumos_options['yelp_uid'] . '">'.'</a></li>';
+            if (!empty($lumos_options['blogger_uid'])) 			echo '<li><a target="_blank" class="icon-blogger" href="' . $lumos_options['blogger_uid'] . '">'.'</a></li>';
+            if (!empty($lumos_options['instagram_uid'])) 		echo '<li><a target="_blank" class="icon-instagram" href="' . $lumos_options['instagram_uid'] . '">'.'</a></li>';
+            if (!empty($lumos_options['foursquare_uid'])) 	echo '<li><a target="_blank" class="icon-foursquare" href="' . $lumos_options['foursquare_uid'] . '">'.'</a></li>';
+            echo '<li><a href="/contact/"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>';
+            echo '<li><a href="tel:+1-"><i class="fa fa-phone" aria-hidden="true"></i></a></li>';
+            echo '</ul><!-- end of .social-icons -->';
+            ?>
+        <ul class="mobile-nav d-none">
+          <li><a href="<?php echo home_url('/contact/'); ?>"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+          <li>
+            <a href="tel:+1-">
+              <i class="fa fa-phone" aria-hidden="true">
+              </i>
+            </a>
+          </li>
+        </ul>
+        <?php wp_nav_menu(array( 'theme_location' => 'header-nav','menu_class' => 'sf-menu menu-slick')); ?>
+      </nav><!-- nav#access -->
     </div>
   </div>
-  <!-- #header-info .container-->
   
-  <?php endif; ?>
+  <?php else : ?>
   
   <div id="nav-menu" class="container">
     <div class="row">
@@ -156,6 +151,8 @@ $lumos_options = lumos_get_options();
     </div>
   </div>
 
+  <?php endif; ?>
+
 </header>
 <!-- #header -->
 
@@ -170,22 +167,9 @@ $lumos_options = lumos_get_options();
     <div class="row">
 	    	<div class="col col-6">
           <address>
-          <span>Palm Springs</span><br/>
-          1900 E. Tahquitz Canyon Way<br/>
-          Suite A1<br/>
-          Palm Springs, CA 92262
-          </address>
-          <address>
-            <span>Palm Desert</span><br/>
-            72-780 El Paseo<br/>
-            Suite E-1<br/>
-            PalmDesert, CA 92260
           </address>
 	      <a href="<?php echo home_url('/location/'); ?>">
-	        <img class="img-fluid mt-2" src="<?php echo get_template_directory_uri(); ?>/img/map-ps.png" alt="Location" />
-	      </a>
-        <a href="<?php echo home_url('/location/'); ?>">
-	        <img class="img-fluid mt-2" src="<?php echo get_template_directory_uri(); ?>/img/map-pd.png" alt="Location" />
+	        <img class="img-fluid mt-2" src="<?php echo get_template_directory_uri(); ?>/img/map.jpg" alt="Location" />
 	      </a>
 	    </div>
 	    <!-- end of col-1-3 -->

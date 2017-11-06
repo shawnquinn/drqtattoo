@@ -164,7 +164,7 @@ $empty = ( empty( $lumos_options['home_headline'] ) && empty( $lumos_options['ho
 <section id="services" class="services">
   <div class="container">
     <div class="row">
-      <div class="col-sm-4 wow fadeInUp" data-wow-offset="250">
+      <div class="col-sm-4 wow fadeIn" data-wow-offset="250">
         <a href="<?php echo esc_url( home_url('') ) ?>">
           <div class="square">
             <div class="square-inn">
@@ -180,7 +180,7 @@ $empty = ( empty( $lumos_options['home_headline'] ) && empty( $lumos_options['ho
         </a>
       </div> 
       
-      <div class="col-sm-4 wow fadeInUp" data-wow-offset="250">
+      <div class="col-sm-4 wow fadeIn" data-wow-offset="250">
         <a href="<?php echo esc_url( home_url('') ) ?>">
           <div class="square">
             <div class="square-inn">
@@ -196,7 +196,7 @@ $empty = ( empty( $lumos_options['home_headline'] ) && empty( $lumos_options['ho
         </a>
       </div> 
 
-      <div class="col-sm-4 wow fadeInUp" data-wow-offset="250">
+      <div class="col-sm-4 wow fadeIn" data-wow-offset="250">
         <a href="<?php echo esc_url( home_url('') ) ?>">
           <div class="square">
             <div class="square-inn">

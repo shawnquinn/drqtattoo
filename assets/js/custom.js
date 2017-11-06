@@ -16,13 +16,17 @@ var wow = new WOW(
 	// Stickky Nav
 	var nav = document.querySelector('#nav-menu');
     var topOfNav = nav.offsetTop;
-
+	var mainInside = document.querySelector('#main');
     function fixNav() {
       if(window.scrollY >= topOfNav) {
-        //document.body.style.paddingTop = nav.offsetHeight + 'px';
+		if( document.body.className.match('inside-page') ) {
+			mainInside.style.paddingTop = nav.offsetHeight + 'px';
+		} 
         document.body.classList.add('fixed-nav');
       } else {
-		//document.body.style.paddingTop = 0;
+		if( document.body.className.match('inside-page') ) {
+			mainInside.style.paddingTop = 0;
+		}
         document.body.classList.remove('fixed-nav');
       }
     }
@@ -36,15 +40,15 @@ jQuery(function($) {
 		/*** ScrollMagic Init ***/
 		/****************************************************************/
 
-		const controller = new ScrollMagic.Controller({ globalSceneOptions : { triggerHook: "onEnter", duration: "200%"}});
+		//const controller = new ScrollMagic.Controller({ globalSceneOptions : { triggerHook: "onEnter", duration: "200%"}});
 
 		/*** PX-1 *** --------------------------- */
 
 
-		function px($name, $section, $id) {
-			$name = TweenMax.to($section, 1, { css: { backgroundPosition: 'center 100%' }, ease: Linear.easeNone });
-			new ScrollMagic.Scene( { triggerElement: $id} ).setTween($name).addTo(controller);
-		}
+		// function px($name, $section, $id) {
+		// 	$name = TweenMax.to($section, 1, { css: { backgroundPosition: 'center 100%' }, ease: Linear.easeNone });
+		// 	new ScrollMagic.Scene( { triggerElement: $id} ).setTween($name).addTo(controller);
+		// }
 
 		//Parallax Section 1
 		//px('px1','.services','#services');
@@ -53,7 +57,7 @@ jQuery(function($) {
 		//px('px2','section.review','#px-2');
 
 		//Parallax Section 3
-		px('px3','section.contact','#px-3');
+		//px('px3','section.contact','#px-3');
 
     	// Animate Object - Camera move to the right
 		// function pxObject($name, $object, $id) {

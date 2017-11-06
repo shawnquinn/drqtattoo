@@ -21,7 +21,7 @@
   .slicknav_btn {
     background-color: transparent;
     float: right;
-    margin: 3px 1rem 5px 0;
+    margin: 1px 1rem 5px 0;
     padding: 15px;
   }
 
@@ -41,7 +41,7 @@
   .slicknav_open .slicknav_icon-bar:nth-child(1) {
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
-    top: 7px;
+    top: 9px;
   }
 
   .slicknav_open .slicknav_icon-bar:nth-child(2) {
@@ -70,12 +70,16 @@
 
   .slicknav_menu .slicknav_icon-bar {
     display: block;
-    width: 28px;
-    height: 4px;
+    width: 30px;
+    height: 1px;
     border-radius: 0;
     box-shadow: none;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
+  }
+
+  .slicknav_btn .slicknav_icon-bar+.slicknav_icon-bar {
+    margin-top: 8px;
   }
 
   .slicknav_nav .slicknav_row,

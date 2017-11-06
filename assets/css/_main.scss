@@ -566,7 +566,6 @@ a.btn-secondary:hover {
 
 .widget .wpcf7 input[type='submit'] {
   width: 100% !important;
-  height: 75px;
   margin-top: 0.5em !important;
 }
 
@@ -742,9 +741,6 @@ a.btn-secondary:hover {
     position: relative;
     z-index: 99999;
   }
-  #info-contact {
-    border-bottom: 1px solid $theme-secondary-color;
-  }
 }
 
 #social::after {
@@ -846,6 +842,20 @@ a.btn-secondary:hover {
 }
 
 .fixed-nav #nav-menu {
+  position: fixed;
+  max-width: 100%;
+  top: 0;
+  box-shadow: 0px 3px 6px rgba($black, 0.2);
+}
+
+.inside-page {
+  #nav-menu {
+    position: relative;
+    top: initial;
+  }
+}
+
+.inside-page.fixed-nav #nav-menu {
   position: fixed;
   max-width: 100%;
   top: 0;
@@ -1816,14 +1826,14 @@ h3.widget-title {
 
 #footer-nav li a {
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   display: inline;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
   text-transform: none;
-  color: $white;
+  color: $black;
 }
 
 #footer-nav li:first-child a {
@@ -1836,8 +1846,8 @@ h3.widget-title {
   width: 100%;
   height: auto;
   text-align: left;
-  color: $white;
-  background: $theme-tertiary-color;
+  color: $black;
+  background: $white;
   & .container {
     position: relative;
     z-index: 3;
@@ -1845,10 +1855,11 @@ h3.widget-title {
 }
 
 .bottom h4 {
+  font-family: $font-primary-alt;
   font-size: 22px;
   font-weight: 400;
   text-transform: uppercase;
-  color: $white;
+  color: $theme-secondary-color;
 }
 
 .bottom address {
@@ -1896,10 +1907,10 @@ h3.widget-title {
   clear: both;
   width: 100%;
   margin-top: 0;
-  padding: 1rem 0;
+  padding: 2rem 0;
   text-align: center;
   color: $white;
-  border-top: 1px solid $white;
+  background: $theme-main-color;
 }
 
 .footer-copyright,
@@ -1909,7 +1920,7 @@ h3.widget-title {
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
-  color: #fff;
+  color: $white;
 }
 
 .footer-copyright .container {
@@ -1978,8 +1989,6 @@ h3.widget-title {
   border-right: 0;
   border-bottom: 0;
   border-left: 0;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
   border-radius: 0;
   background: $theme-accent-color;
 }
@@ -1992,24 +2001,42 @@ header .social-icons li a {
   margin: 0;
   padding: 10px;
   transition: all 0.2s ease;
-  color: $theme-secondary-color;
-  border: 2px solid $theme-secondary-color;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
+  color: $white;
+  border: 1px solid $theme-secondary-color;
+  border-radius: 0;
   background: transparent;
+
+  @media screen and (min-width: $sm) {
+    background: $theme-accent-color;
+    color: $white;
+  }
+
+  &:hover {
+    background: $white;
+    color: $theme-accent-color;
+    @media screen and (max-width: $md) {
+      background: $theme-accent-color;
+      color: $white;
+    }
+  }
+
+}
+
+.contact .social-icons li a {
+  background: $theme-accent-color;
+  border: 1px solid $theme-accent-color;
+  transition: all 0.2s ease;
+  &:hover {
+    background: $white;
+    color: $theme-secondary-color;
+    border: 1px solid $theme-accent-color;
+  }
 }
 
 @media only screen and (max-width: 1280px) {
   header .social-icons li a {
     font-size: 18px;
   }
-}
-
-header .social-icons li a:hover {
-  color: #fff;
-  border: 2px solid $theme-accent-color;
-  background: $theme-accent-color;
 }
 
 .social-icons li a:hover {
@@ -2068,11 +2095,14 @@ header .social-icons li a:hover {
       margin: 0.5rem 0.25rem;
       a {
         font-size: 18px;
-        color: $theme-tertiary-color;
-        background: $white;
+        color: $white;
+        background: $theme-secondary-color;
+        border: 1px solid $theme-secondary-color;
+        border-radius: 0;
         &:hover {
-          color: $white;
-          background: $theme-secondary-color;
+          color: $theme-secondary-color;
+          background: $white;
+          border: 1px solid $theme-secondary-color;
         }
       }
     }
@@ -2554,7 +2584,8 @@ h1.page-title-cat {
 
 #searchform button[type='submit'] {
   position: absolute;
-  right: 10px;
+  right: 5px;
+  top:0;
   padding: 7px;
   border: 0;
   background: transparent;
@@ -2678,7 +2709,7 @@ div.wpcf7-validation-errors {
 
 #secondary .widget .wpcf7 input[type='submit'],
 .widget .wpcf7 input[type='submit'] {
-  padding: 1em 0;
+  padding: 1.25em 0;
   border-color: $theme-main-color;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -2700,19 +2731,16 @@ div.wpcf7-validation-errors {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   margin: 7px 0;
+  background-color: rgba($white, 0.9);
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
-  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, .5), inset 0 3px 3px rgba(0, 0, 0, .5);
-  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, .5), inset 0 3px 3px rgba(0, 0, 0, .5);
-  box-shadow: 0 0 3px rgba(0, 0, 0, .5), inset 0 3px 3px rgba(0, 0, 0, .5);
-}
-
-.widget .wpcf7 input {
-  float: left;
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, .3), inset 0 3px 3px rgba(0, 0, 0, .3);
+  -moz-box-shadow:    0 0 3px rgba(0, 0, 0, .3), inset 0 3px 3px rgba(0, 0, 0, .3);
+  box-shadow:         0 0 3px rgba(0, 0, 0, .3), inset 0 3px 3px rgba(0, 0, 0, .3);
 }
 
 .widget .wpcf7 input[type='checkbox'] {
@@ -2742,8 +2770,6 @@ div.wpcf7-validation-errors {
   font-size: 12px;
   line-height: 1.2em;
   display: block;
-  float: left;
-  clear: both;
   width: 100%;
   margin: 0 auto;
   padding: 0;
