@@ -2,7 +2,7 @@
 
 /**
  * Some Shortcodes.
----------------------------------------------------------*/
+*/
 	//Segment Shortcode
 	function segment_shortcode( $atts, $content = null ) {
 		$a = shortcode_atts( array(
